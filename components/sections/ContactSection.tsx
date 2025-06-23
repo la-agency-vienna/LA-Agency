@@ -19,7 +19,7 @@ export const ContactSection: React.FC = () => {
           className="text-center"
           style={{ marginBottom: 'clamp(3rem, 8vw, 8rem)' }}
         >
-          <h2 className="heading-section">Let's connect!</h2>
+          <h2 className="heading-section">Let&apos;s connect!</h2>
           <p className="text-luxury mx-auto leading-relaxed container-narrow" 
              style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', paddingLeft: 'clamp(1rem, 3vw, 2rem)', paddingRight: 'clamp(1rem, 3vw, 2rem)' }}>
             Bereit für dein nächstes Projekt? Kontaktiere uns für ein unverbindliches Erstgespräch, wir freuen uns auf deine Vision!

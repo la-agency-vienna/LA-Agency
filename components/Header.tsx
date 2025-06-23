@@ -12,12 +12,15 @@ export const Header: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (typeof window !== 'undefined') {
+        // eslint-disable-next-line no-restricted-globals
         setIsScrolled(window.scrollY > 20);
       }
     };
 
     if (typeof window !== 'undefined') {
+      // eslint-disable-next-line no-restricted-globals
       window.addEventListener('scroll', handleScroll);
+      // eslint-disable-next-line no-restricted-globals
       return () => window.removeEventListener('scroll', handleScroll);
     }
   }, []);
@@ -29,11 +32,13 @@ export const Header: React.FC = () => {
     };
 
     if (isMobileMenuOpen && typeof document !== 'undefined') {
+      // eslint-disable-next-line no-restricted-globals
       document.addEventListener('click', handleClickOutside);
     }
 
     return () => {
       if (typeof document !== 'undefined') {
+        // eslint-disable-next-line no-restricted-globals
         document.removeEventListener('click', handleClickOutside);
       }
     };
@@ -41,6 +46,7 @@ export const Header: React.FC = () => {
 
   const scrollToSection = (sectionId: string) => {
     if (typeof document !== 'undefined') {
+      // eslint-disable-next-line no-restricted-globals
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });

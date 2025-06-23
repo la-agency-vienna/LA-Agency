@@ -13,13 +13,16 @@ export const HeroSection: React.FC = () => {
   useEffect(() => {
     const checkMobile = () => {
       if (typeof window !== 'undefined') {
+        // eslint-disable-next-line no-restricted-globals
         setIsMobile(window.innerWidth < 768);
       }
     };
     
     checkMobile();
     if (typeof window !== 'undefined') {
+      // eslint-disable-next-line no-restricted-globals
       window.addEventListener('resize', checkMobile);
+      // eslint-disable-next-line no-restricted-globals
       return () => window.removeEventListener('resize', checkMobile);
     }
   }, []);

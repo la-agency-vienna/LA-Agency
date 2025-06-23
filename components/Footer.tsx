@@ -37,8 +37,11 @@ export const Footer: React.FC = () => {
             <nav className="flex flex-wrap justify-center responsive-gap-md">
               <button
                 onClick={() => {
-                  const element = document.getElementById('services');
-                  if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  if (typeof document !== 'undefined') {
+                    // eslint-disable-next-line no-restricted-globals
+                    const element = document.getElementById('services');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }
                 }}
                 className="btn-luxury-minimal"
                 style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
@@ -47,8 +50,11 @@ export const Footer: React.FC = () => {
               </button>
               <button
                 onClick={() => {
-                  const element = document.getElementById('locations');
-                  if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  if (typeof document !== 'undefined') {
+                    // eslint-disable-next-line no-restricted-globals
+                    const element = document.getElementById('locations');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }
                 }}
                 className="btn-luxury-minimal"
                 style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
@@ -57,8 +63,11 @@ export const Footer: React.FC = () => {
               </button>
               <button
                 onClick={() => {
-                  const element = document.getElementById('projects');
-                  if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  if (typeof document !== 'undefined') {
+                    // eslint-disable-next-line no-restricted-globals
+                    const element = document.getElementById('projects');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }
                 }}
                 className="btn-luxury-minimal"
                 style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
@@ -67,8 +76,11 @@ export const Footer: React.FC = () => {
               </button>
               <button
                 onClick={() => {
-                  const element = document.getElementById('contact');
-                  if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  if (typeof document !== 'undefined') {
+                    // eslint-disable-next-line no-restricted-globals
+                    const element = document.getElementById('contact');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }
                 }}
                 className="btn-luxury-minimal"
                 style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}

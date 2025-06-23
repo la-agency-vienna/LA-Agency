@@ -132,8 +132,11 @@ export const LocationsSection: React.FC = () => {
           </p>
           <Button
             onClick={() => {
-              const element = document.getElementById('contact-form');
-              if (element) element.scrollIntoView({ behavior: 'smooth' });
+              if (typeof document !== 'undefined') {
+                // eslint-disable-next-line no-restricted-globals
+                const element = document.getElementById('contact-form');
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+              }
             }}
             size="lg"
             className="btn-luxury"

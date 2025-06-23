@@ -151,7 +151,7 @@ const Z13Content: React.FC = () => {
             </h3>
             <div className="space-y-4 text-sm leading-relaxed text-[var(--brand-text-secondary)]">
               <p>
-                HIDDEN IN THE HEART OF VIENNA'S TRENDY 7TH DISTRICT LIES THE Z13 LOFT. DESIGNED BY THE RENOWNED ITALIAN ARCHITECT VINCENZO DE COTIIS, THIS UNIQUE DESIGNER LOFT SKILLFULLY COMBINES CRAFTSMANSHIP WITH PRACTICALITY.
+                HIDDEN IN THE HEART OF VIENNA&apos;S TRENDY 7TH DISTRICT LIES THE Z13 LOFT. DESIGNED BY THE RENOWNED ITALIAN ARCHITECT VINCENZO DE COTIIS, THIS UNIQUE DESIGNER LOFT SKILLFULLY COMBINES CRAFTSMANSHIP WITH PRACTICALITY.
               </p>
               <p>
                 THE Z13 LOFT EMBODIES THE ESSENCE OF LUXURIOUS LIVING WITHOUT OSTENTATIOUS DISPLAYS. HERE, IMPERFECTION SEAMLESSLY MERGES WITH FORM AND FUNCTION TO CREATE AN EVENT SPACE THAT IS AS INVITING TO ITS GUESTS AS IT IS VISUALLY FASCINATING.
@@ -172,8 +172,8 @@ const Z13Content: React.FC = () => {
         {/* Quote Section */}
         <div className="text-center space-y-6 py-8">
           <blockquote className="text-lg md:text-xl font-light italic text-[var(--brand-text-primary)]">
-            "I ALWAYS LOOK IN TWO DIRECTIONS:<br />
-            INTO THE PAST AND INTO THE FUTURE."
+            &quot;I ALWAYS LOOK IN TWO DIRECTIONS:<br />
+            INTO THE PAST AND INTO THE FUTURE.&quot;
           </blockquote>
           <p className="text-sm tracking-wider text-[var(--brand-text-muted)]">
             VINCENZO DE COTIIS
@@ -191,7 +191,7 @@ const Z13Content: React.FC = () => {
                 DE COTIIS WAS BORN IN 1958 IN GONZAGA, ITALY, AND STUDIED ARCHITECTURE AT THE POLITECNICO DI MILANO. HIS FORMATIVE YEARS WERE INFLUENCED BY THE ART AND ARCHITECTURAL MOVEMENTS OF THE 1960S AND 1970S, ESPECIALLY ARTE POVERA.
               </p>
               <p>
-                VINCENZO DE COTIIS HAS ESTABLISHED HIMSELF AS ONE OF THE MOST RENOWNED CREATIVES OF OUR TIME. HIS WORKS, RANGING FROM EXQUISITE FURNITURE PIECES TO FASCINATING SCULPTURES, ADORN THE PRESTIGIOUS SPACES OF THE CARPENTER'S WORKSHOP GALLERY, WHERE THEY ARE CELEBRATED AS MASTERPIECES OF CONTEMPORARY DESIGN.
+                VINCENZO DE COTIIS HAS ESTABLISHED HIMSELF AS ONE OF THE MOST RENOWNED CREATIVES OF OUR TIME. HIS WORKS, RANGING FROM EXQUISITE FURNITURE PIECES TO FASCINATING SCULPTURES, ADORN THE PRESTIGIOUS SPACES OF THE CARPENTER&apos;S WORKSHOP GALLERY, WHERE THEY ARE CELEBRATED AS MASTERPIECES OF CONTEMPORARY DESIGN.
               </p>
             </div>
           </div>
@@ -214,7 +214,7 @@ const Z13Content: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4 text-sm leading-relaxed text-[var(--brand-text-secondary)]">
               <p>
-                ONE OF DE COTIIS'S TRADEMARKS IS HIS ABILITY TO TRANSFORM RAW AND RECYCLED MATERIALS INTO UTTERLY CAPTIVATING PIECES. BY BLENDING SEEMINGLY CONTRASTING ELEMENTS LIKE ROUGH STONE, OXIDIZED METALS, MIRRORED SURFACES, AND ANTIQUE TEXTILES, HE CREATES A FASCINATING INTERPLAY OF TEXTURES, COLORS, AND SHAPES.
+                ONE OF DE COTIIS&apos;S TRADEMARKS IS HIS ABILITY TO TRANSFORM RAW AND RECYCLED MATERIALS INTO UTTERLY CAPTIVATING PIECES. BY BLENDING SEEMINGLY CONTRASTING ELEMENTS LIKE ROUGH STONE, OXIDIZED METALS, MIRRORED SURFACES, AND ANTIQUE TEXTILES, HE CREATES A FASCINATING INTERPLAY OF TEXTURES, COLORS, AND SHAPES.
               </p>
               <p>
                 IN HIS ARCHITECTURAL PROJECTS, DE COTIIS DEMONSTRATES SENSITIVITY TO THE EXISTING CONTEXT WHILE INFUSING IT WITH HIS OWN CREATIVE VISION. HIS DESIGNS SEAMLESSLY INTEGRATE INTO THEIR SURROUNDINGS, PAYING HOMAGE TO THE HISTORY AND CULTURE OF THE PLACE.
@@ -239,7 +239,7 @@ const Z13Content: React.FC = () => {
           </h3>
           <div className="space-y-4 text-sm leading-relaxed text-[var(--brand-text-secondary)]">
             <p>
-              STEP INTO THE ELECTRIFYING REALM OF Z13 LOFT, WHERE 350 SQUARE METERS IN VIENNA'S HISTORIC 1070 DISTRICT TRANSFORM INTO A CANVAS FOR YOUR BOLDEST VISIONS. THIS EXTRAORDINARY SPACE IS YOUR PLAYGROUND, WHETHER YOU'RE CONJURING MEDIA MAGIC, HOSTING CUTTING-EDGE WORKSHOPS, OR RAISING A GLASS AT AN ELEGANT SOIRÉE.
+              STEP INTO THE ELECTRIFYING REALM OF Z13 LOFT, WHERE 350 SQUARE METERS IN VIENNA&apos;S HISTORIC 1070 DISTRICT TRANSFORM INTO A CANVAS FOR YOUR BOLDEST VISIONS. THIS EXTRAORDINARY SPACE IS YOUR PLAYGROUND, WHETHER YOU&apos;RE CONJURING MEDIA MAGIC, HOSTING CUTTING-EDGE WORKSHOPS, OR RAISING A GLASS AT AN ELEGANT SOIRÉE.
             </p>
             <p>
               WITH A TOUCH OF HISTORY Z13 SETS THE STAGE LIKE NO OTHER. YOUR GUESTS WILL ENJOY TO MAKE THEIR MARK AT Z13, WHERE POSSIBILITIES ARE LIMITLESS, AND THE SPOTLIGHT IS YOURS FOR THE TAKING.
@@ -309,7 +309,7 @@ const Z13Content: React.FC = () => {
                 <li>• DISHWASHER</li>
                 <li>• FRIDGE</li>
                 <li>• FOOD AND DRINK STORAGE</li>
-                <li>• DE'LONGHI COFFEE MACHINE</li>
+                <li>• DE&apos;LONGHI COFFEE MACHINE</li>
               </ul>
             </div>
           </div>
@@ -404,7 +404,7 @@ const Z13Content: React.FC = () => {
               <li>• STORAGE SPACE: YES</li>
               <li>• HIGH VOLTAGE: YES</li>
               <li>• LOADING ZONE: YES</li>
-              <li>• PARKING: PARKING LOTS ON THE STREET OR IN THE PARKING GARAGE GERNGROSS, ONE MINUTE'S WALK</li>
+              <li>• PARKING: PARKING LOTS ON THE STREET OR IN THE PARKING GARAGE GERNGROSS, ONE MINUTE&apos;S WALK</li>
             </ul>
           </div>
         </div>
@@ -870,7 +870,7 @@ const EsterhagyContent: React.FC = () => {
                 <strong>Sessel:</strong> 169 gesamt (42 mit Hussen, 23 ohne Hussen, 59 Goldene, 45 Schwarze)
               </div>
               <div>
-                <strong>Weiteres Equipment:</strong> LCD Screen 85", Mikrophon, Musikanlage, 2 Lautsprecher, 2 Aufzüge, 2 Flipcharts, Kleiderständer, Geschirr
+                <strong>Weiteres Equipment:</strong> LCD Screen 85&quot;, Mikrophon, Musikanlage, 2 Lautsprecher, 2 Aufzüge, 2 Flipcharts, Kleiderständer, Geschirr
               </div>
             </div>
           </div>
@@ -936,7 +936,7 @@ const EsterhagyContent: React.FC = () => {
               </div>
             </div>
             <div className="pt-4 space-y-2 text-xs text-[var(--brand-text-muted)]">
-              <div>• Garage "Am Hof" (2 Minuten zu Fuß)</div>
+              <div>• Garage &quot;Am Hof&quot; (2 Minuten zu Fuß)</div>
               <div>• U-Bahn U3 Herrengasse (1 Minute zu Fuß)</div>
               <div>• Flughafen Wien Schwechat (30min)</div>
               <div>• Hauptbahnhof Wien (18min)</div>

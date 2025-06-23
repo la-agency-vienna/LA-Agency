@@ -44,7 +44,7 @@ export default function TermsPage() {
                 <p className="mb-4">
                   Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge und Leistungen 
                   des Club des Wiener Renn-Verein, Palais & Event Management, vertreten durch Lidija Ajvazi 
-                  (nachfolgend "Auftragnehmer") im Bereich Marketing, PR, Eventmanagement und verwandter Dienstleistungen.
+                  (nachfolgend &quot;Auftragnehmer&quot;) im Bereich Marketing, PR, Eventmanagement und verwandter Dienstleistungen.
                 </p>
                 <p className="mb-4">
                   Abweichende, entgegenstehende oder ergänzende Allgemeine Geschäftsbedingungen des Auftraggebers 

@@ -25,13 +25,19 @@ export const MouseProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     const handleMouseUp = () => setIsPressed(false);
 
     if (typeof window !== 'undefined') {
+      // eslint-disable-next-line no-restricted-globals
       window.addEventListener('mousemove', handleMouseMove);
+      // eslint-disable-next-line no-restricted-globals
       window.addEventListener('mousedown', handleMouseDown);
+      // eslint-disable-next-line no-restricted-globals
       window.addEventListener('mouseup', handleMouseUp);
 
       return () => {
+        // eslint-disable-next-line no-restricted-globals
         window.removeEventListener('mousemove', handleMouseMove);
+        // eslint-disable-next-line no-restricted-globals
         window.removeEventListener('mousedown', handleMouseDown);
+        // eslint-disable-next-line no-restricted-globals
         window.removeEventListener('mouseup', handleMouseUp);
       };
     }

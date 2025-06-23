@@ -108,8 +108,11 @@ export const OfferSection: React.FC = () => {
           >
             <button
               onClick={() => {
-                const element = document.getElementById('contact-form');
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
+                if (typeof document !== 'undefined') {
+                  // eslint-disable-next-line no-restricted-globals
+                  const element = document.getElementById('contact-form');
+                  if (element) element.scrollIntoView({ behavior: 'smooth' });
+                }
               }}
               className="btn-luxury-filled hover-lift"
             >

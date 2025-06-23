@@ -1,0 +1,37 @@
+{
+  "extends": ["next/core-web-vitals"],
+  "rules": {
+    // SSR/Hydration specific rules
+    "@next/next/no-html-link-for-pages": "error",
+    "@next/next/no-img-element": "warn",
+    "@next/next/no-head-element": "error",
+    "@next/next/no-document-import-in-page": "error",
+    
+    // Custom rules to catch risky global usage
+    "no-restricted-globals": [
+      "warn",
+      {
+        "name": "localStorage",
+        "message": "Use 'typeof localStorage !== 'undefined'' check before accessing localStorage to prevent SSR issues."
+      },
+      {
+        "name": "sessionStorage", 
+        "message": "Use 'typeof sessionStorage !== 'undefined'' check before accessing sessionStorage to prevent SSR issues."
+      }
+    ],
+    
+    // React hooks rules (already included in next/core-web-vitals)
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    
+    // General code quality
+    "no-console": "warn",
+    "prefer-const": "error",
+    "no-var": "error"
+  },
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  }
+} 

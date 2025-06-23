@@ -132,7 +132,10 @@ export const ProjectsSection: React.FC = () => {
                   <div className="pt-2">
                     <Button
                       onClick={() => {
-                        window.open(project.link, '_blank');
+                        if (typeof window !== 'undefined') {
+        // eslint-disable-next-line no-restricted-globals
+        window.open(project.link, '_blank');
+      }
                       }}
                       variant="outline"
                       size="sm"
@@ -163,8 +166,11 @@ export const ProjectsSection: React.FC = () => {
           </p>
           <Button
             onClick={() => {
-              const element = document.getElementById('contact-form');
-              if (element) element.scrollIntoView({ behavior: 'smooth' });
+              if (typeof document !== 'undefined') {
+                // eslint-disable-next-line no-restricted-globals
+                const element = document.getElementById('contact-form');
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+              }
             }}
             size="lg"
             className="btn-luxury"

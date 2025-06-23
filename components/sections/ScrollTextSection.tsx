@@ -28,9 +28,12 @@ export const ScrollTextSection: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
     if (!isClient) return; // Prevent scroll during SSR
     
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (typeof document !== 'undefined') {
+      // eslint-disable-next-line no-restricted-globals
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 

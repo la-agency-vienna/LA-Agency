@@ -17,13 +17,19 @@ export const CustomCursor: React.FC = () => {
     const handleMouseEnter = () => setIsVisible(true);
 
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      // eslint-disable-next-line no-restricted-globals
       window.addEventListener('mousemove', handleMouseMove);
+      // eslint-disable-next-line no-restricted-globals
       document.addEventListener('mouseleave', handleMouseLeave);
+      // eslint-disable-next-line no-restricted-globals
       document.addEventListener('mouseenter', handleMouseEnter);
 
       return () => {
+        // eslint-disable-next-line no-restricted-globals
         window.removeEventListener('mousemove', handleMouseMove);
+        // eslint-disable-next-line no-restricted-globals
         document.removeEventListener('mouseleave', handleMouseLeave);
+        // eslint-disable-next-line no-restricted-globals
         document.removeEventListener('mouseenter', handleMouseEnter);
       };
     }

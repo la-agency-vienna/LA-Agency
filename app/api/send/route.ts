@@ -127,7 +127,10 @@ export async function POST(request: NextRequest) {
     });
 
     if (emailData.error) {
-      console.error('Resend error:', emailData.error);
+      // Log error for debugging in development only
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Resend error:', emailData.error);
+      }
       return NextResponse.json(
         { error: 'Fehler beim Versenden der E-Mail' },
         { status: 500 }
@@ -141,7 +144,10 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('API Error:', error);
+    // Log error for debugging in development only
+    if (process.env.NODE_ENV === 'development') {
+      console.error('API Error:', error);
+    }
     return NextResponse.json(
       { error: 'Interner Serverfehler' },
       { status: 500 }
