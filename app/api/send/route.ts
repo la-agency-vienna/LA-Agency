@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
     // Send email using Resend with fallback HTML template
     const emailData = await resend.emails.send({
       from: 'L.A. Agency Contact <onboarding@resend.dev>',
-      to: ['hello@la-agency-vienna.com'],
+      to: [process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@la-agency-vienna.com'],
       subject: `Neue Kontaktanfrage von ${contactName} - ${timestamp}`,
       react: ContactEmail({ 
         name: contactName, 

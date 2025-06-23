@@ -8,6 +8,8 @@ import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.la-agency-vienna.com';
+
 export const metadata: Metadata = {
   title: 'L.A. Agency Vienna',
   description: 'Exklusives Marketing, PR und Eventmanagement in Wien. Spezialisiert auf Marketing, Branding, Events und Content Produktion.',
@@ -16,7 +18,7 @@ export const metadata: Metadata = {
   creator: 'L.A. Agency Vienna',
   publisher: 'L.A. Agency Vienna',
   robots: 'index, follow',
-  metadataBase: new URL('https://www.la-agency-vienna.com'),
+  metadataBase: new URL(siteUrl),
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
@@ -25,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'L.A. Agency Vienna',
     description: 'Exklusives Marketing, PR und Eventmanagement in Wien',
-    url: 'https://www.la-agency-vienna.com', 
+    url: siteUrl, 
     siteName: 'L.A. Agency Vienna',
     locale: 'de_AT',
     type: 'website',

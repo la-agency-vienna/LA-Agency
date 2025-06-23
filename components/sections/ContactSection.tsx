@@ -52,7 +52,7 @@ export const ContactSection: React.FC = () => {
                   <div className="text-center sm:text-left">
                     <p className="text-subtle" style={{ marginBottom: 'clamp(0.25rem, 0.5vw, 0.5rem)', fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>E-Mail</p>
                     <p className="text-[var(--brand-text-primary)] font-light tracking-wide" 
-                       style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>hello@la-agency-vienna.com</p>
+                       style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>{process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@la-agency-vienna.com'}</p>
                   </div>
                 </div>
 
