@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend with fallback HTML template
     const emailData = await resend.emails.send({
-      from: 'L.A. Agency Contact <onboarding@resend.dev>',
+      from: `L.A. Agency Contact <${process.env.RESEND_FROM_EMAIL || 'noreply@la-agency-vienna.com'}>`,
       to: [process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@la-agency-vienna.com'],
       subject: `Neue Kontaktanfrage von ${contactName} - ${timestamp}`,
       react: ContactEmail({ 
@@ -130,9 +130,10 @@ export async function POST(request: NextRequest) {
       // Log error for debugging in development only
       if (process.env.NODE_ENV === 'development') {
         console.error('Resend error:', emailData.error);
+        console.error('Email data:', { contactName, contactEmail, contactMessage });
       }
       return NextResponse.json(
-        { error: 'Fehler beim Versenden der E-Mail' },
+        { error: 'Fehler beim Versenden der E-Mail', details: emailData.error },
         { status: 500 }
       );
     }
