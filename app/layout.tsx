@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   creator: 'L.A. Agency Vienna',
   publisher: 'L.A. Agency Vienna',
   robots: 'index, follow',
-  metadataBase: new URL('https://la-agency.vienna'),
+  metadataBase: new URL('https://www.la-agency-vienna.com'),
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'L.A. Agency Vienna',
     description: 'Exklusives Marketing, PR und Eventmanagement in Wien',
-    url: 'https://la-agency.vienna', 
+    url: 'https://www.la-agency-vienna.com', 
     siteName: 'L.A. Agency Vienna',
     locale: 'de_AT',
     type: 'website',
