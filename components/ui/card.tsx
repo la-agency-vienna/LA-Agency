@@ -4,13 +4,18 @@ import { cn } from "@/lib/utils";
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
+>(({ className, style, ...props }, ref) => (
   <div
     ref={ref}
     className={cn(
-      "rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 p-8 shadow-xl transition-all duration-300 hover:scale-[1.025] hover:shadow-2xl hover:border-[#ffb366]/50",
+      "bg-white/5 backdrop-blur-md border border-white/10 shadow-xl transition-all duration-300 hover:scale-[1.025] hover:shadow-2xl",
       className
     )}
+    style={{ 
+      borderRadius: '6px', 
+      padding: 'clamp(1.5rem, 4vw, 2rem)',
+      ...style 
+    }}
     {...props}
   />
 ));
@@ -19,10 +24,15 @@ Card.displayName = "Card";
 const CardHeader = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
+>(({ className, style, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex flex-col space-y-1.5 p-0 pb-6", className)}
+    className={cn("flex flex-col p-0", className)}
+    style={{ 
+      gap: 'clamp(0.5rem, 1vw, 0.75rem)',
+      paddingBottom: 'clamp(1rem, 2vw, 1.5rem)',
+      ...style
+    }}
     {...props}
   />
 ));
@@ -31,13 +41,17 @@ CardHeader.displayName = "CardHeader";
 const CardTitle = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
+>(({ className, style, ...props }, ref) => (
   <h3
     ref={ref}
     className={cn(
-      "text-2xl font-bold text-[#ffb366] text-center leading-none tracking-tight",
+      "font-bold text-center leading-none tracking-tight",
       className
     )}
+    style={{
+      fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)',
+      ...style
+    }}
     {...props}
   />
 ));
@@ -46,10 +60,14 @@ CardTitle.displayName = "CardTitle";
 const CardDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => (
+>(({ className, style, ...props }, ref) => (
   <p
     ref={ref}
     className={cn("text-white/70 text-center", className)}
+    style={{
+      fontSize: 'clamp(0.875rem, 2vw, 1rem)',
+      ...style
+    }}
     {...props}
   />
 ));
@@ -66,10 +84,14 @@ CardContent.displayName = "CardContent";
 const CardFooter = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
+>(({ className, style, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex items-center justify-center pt-6", className)}
+    className={cn("flex items-center justify-center", className)}
+    style={{
+      paddingTop: 'clamp(1rem, 2vw, 1.5rem)',
+      ...style
+    }}
     {...props}
   />
 ));

@@ -13,27 +13,31 @@ export default function TermsPage() {
   return (
     <>
       <Background />
-      <div className="min-h-screen py-20">
+      <div className="min-h-screen" style={{ paddingTop: 'clamp(5rem, 8vw, 6rem)', paddingBottom: 'clamp(3rem, 6vw, 5rem)' }}>
         <div className="container-max section-padding">
-          <div className="max-w-4xl mx-auto">
+          <div className="container-narrow mx-auto">
             {/* Header */}
-            <div className="mb-12">
+            <div style={{ marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
               <Link href="/">
-                <Button variant="ghost" className="mb-6">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
+                <Button variant="ghost" 
+                        style={{ marginBottom: 'clamp(1rem, 2vw, 1.5rem)', fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
+                  <ArrowLeft style={{ width: 'clamp(1rem, 2vw, 1.125rem)', height: 'clamp(1rem, 2vw, 1.125rem)', marginRight: 'clamp(0.5rem, 1vw, 0.75rem)' }} />
                   Zurück zur Startseite
                 </Button>
               </Link>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              <h1 className="font-bold text-white text-center lg:text-left" 
+                  style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', marginBottom: 'clamp(1rem, 2vw, 1rem)' }}>
                 Allgemeine Geschäftsbedingungen
               </h1>
-              <p className="text-white/70 text-lg">
+              <p className="text-white/70 text-center lg:text-left" 
+                 style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
                 Stand: {new Date().toLocaleDateString('de-AT')}
               </p>
             </div>
 
             {/* Content */}
-            <div className="glass-card p-8 md:p-12 space-y-8 text-white/80 leading-relaxed">
+            <div className="glass-card text-white/80 leading-relaxed responsive-spacing-lg" 
+                 style={{ padding: 'clamp(1.5rem, 4vw, 3rem)' }}>
               
               <section>
                 <h2 className="text-2xl font-bold text-[#ffb366] mb-4">§ 1 Geltungsbereich</h2>

@@ -2,111 +2,147 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ContactForm } from '@/components/ContactForm';
+import { ContactForm } from '../ContactForm';
 import { Mail, Phone, MapPin, Instagram, Linkedin, Globe } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
   return (
-    <section id="contact" className="section-padding">
-      <div className="container-max">
+    <section id="contact" className="relative section-padding">
+
+      
+      <div className="container-max relative z-30">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center"
+          style={{ marginBottom: 'clamp(3rem, 8vw, 8rem)' }}
         >
-          <h2 className="heading-section">Let's Connect</h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            Bereit für Ihr nächstes Projekt? Kontaktieren Sie uns und lassen Sie uns gemeinsam etwas Außergewöhnliches schaffen.
+          <h2 className="heading-section">Let's connect!</h2>
+          <p className="text-luxury mx-auto leading-relaxed container-narrow" 
+             style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', paddingLeft: 'clamp(1rem, 3vw, 2rem)', paddingRight: 'clamp(1rem, 3vw, 2rem)' }}>
+            Bereit für dein nächstes Projekt? Kontaktiere uns für ein unverbindliches Erstgespräch, wir freuen uns auf deine Vision!
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 responsive-gap-lg">
           {/* Contact Information */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1.0, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="responsive-spacing-lg text-center lg:text-left"
           >
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Kontakt</h3>
+            <div style={{ marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
+              <h3 className="heading-card" style={{ marginBottom: 'clamp(1.5rem, 3vw, 2rem)' }}>L.A. Agency Vienna</h3>
+              <p className="text-luxury" 
+                 style={{ marginBottom: 'clamp(1.5rem, 3vw, 2rem)', fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
+                Deine Agentur für Marketing, PR, Events & mehr in Wien
+              </p>
               
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-[#ffb366]/10 rounded-lg flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-[#ffb366]" />
+              <div className="responsive-spacing-md">
+                <div className="flex flex-col sm:flex-row items-center responsive-gap-sm group">
+                  <div className="border border-[var(--brand-accent-primary)]/30 group-hover:border-[var(--brand-accent-primary)] flex items-center justify-center luxury-transition"
+                       style={{ width: 'clamp(2.5rem, 5vw, 3rem)', height: 'clamp(2.5rem, 5vw, 3rem)' }}>
+                    <Mail className="text-[var(--brand-accent-primary)]" 
+                          style={{ width: 'clamp(1rem, 2vw, 1.25rem)', height: 'clamp(1rem, 2vw, 1.25rem)' }} />
                   </div>
-                  <div>
-                    <p className="text-white font-medium">E-Mail</p>
-                    <p className="text-white/70">hello@la-agency.vienna</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-[#ffb366]/10 rounded-lg flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-[#ffb366]" />
-                  </div>
-                  <div>
-                    <p className="text-white font-medium">Telefon</p>
-                    <p className="text-white/70">+43 1 234 5678</p>
+                  <div className="text-center sm:text-left">
+                    <p className="text-subtle" style={{ marginBottom: 'clamp(0.25rem, 0.5vw, 0.5rem)', fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>E-Mail</p>
+                    <p className="text-[var(--brand-text-primary)] font-light tracking-wide" 
+                       style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>hello@la-agency-vienna.com</p>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-[#ffb366]/10 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-[#ffb366]" />
+                <div className="flex flex-col sm:flex-row items-center responsive-gap-sm group">
+                  <div className="border border-[var(--brand-accent-primary)]/30 group-hover:border-[var(--brand-accent-primary)] flex items-center justify-center luxury-transition"
+                       style={{ width: 'clamp(2.5rem, 5vw, 3rem)', height: 'clamp(2.5rem, 5vw, 3rem)' }}>
+                    <Phone className="text-[var(--brand-accent-primary)]" 
+                           style={{ width: 'clamp(1rem, 2vw, 1.25rem)', height: 'clamp(1rem, 2vw, 1.25rem)' }} />
                   </div>
-                  <div>
-                    <p className="text-white font-medium">Standort</p>
-                    <p className="text-white/70">Wien, Österreich</p>
+                  <div className="text-center sm:text-left">
+                    <p className="text-subtle" style={{ marginBottom: 'clamp(0.25rem, 0.5vw, 0.5rem)', fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>Telefon</p>
+                    <p className="text-[var(--brand-text-primary)] font-light tracking-wide" 
+                       style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>+43 664 3782030</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center responsive-gap-sm group">
+                  <div className="border border-[var(--brand-accent-primary)]/30 group-hover:border-[var(--brand-accent-primary)] flex items-center justify-center luxury-transition"
+                       style={{ width: 'clamp(2.5rem, 5vw, 3rem)', height: 'clamp(2.5rem, 5vw, 3rem)' }}>
+                    <MapPin className="text-[var(--brand-accent-primary)]" 
+                            style={{ width: 'clamp(1rem, 2vw, 1.25rem)', height: 'clamp(1rem, 2vw, 1.25rem)' }} />
+                  </div>
+                  <div className="text-center sm:text-left">
+                    <p className="text-subtle" style={{ marginBottom: 'clamp(0.25rem, 0.5vw, 0.5rem)', fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>Standort</p>
+                    <div className="text-[var(--brand-text-primary)] font-light tracking-wide" 
+                         style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
+                      <p style={{ margin: '0', lineHeight: '1.4' }}>Palais Esterházy</p>
+                      <p style={{ margin: '0', lineHeight: '1.4' }}>Wallnerstraße 4 / WA05</p>
+                      <p style={{ margin: '0', lineHeight: '1.4' }}>1010 Wien – Austria</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            {/* Separation Line */}
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-[var(--brand-accent-primary)]/30 to-transparent" 
+                 style={{ margin: 'clamp(2rem, 4vw, 3rem) 0' }} />
 
             {/* Social Media */}
-            <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
+            <div className="text-center lg:text-left" style={{ marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
+              <h4 className="heading-card" style={{ marginBottom: 'clamp(1rem, 2vw, 1.5rem)' }}>Folge uns auf Social Media</h4>
+              <div className="flex justify-center lg:justify-start responsive-gap-sm">
                 <a
-                  href="#"
-                  className="w-10 h-10 bg-white/5 hover:bg-[#ffb366]/20 rounded-lg flex items-center justify-center transition-colors duration-300 group"
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-[var(--brand-accent-primary)]/30 hover:border-[var(--brand-accent-primary)] flex items-center justify-center luxury-transition group"
+                  aria-label="Instagram"
+                  style={{ width: 'clamp(2.5rem, 5vw, 3rem)', height: 'clamp(2.5rem, 5vw, 3rem)' }}
                 >
-                  <Instagram className="w-5 h-5 text-white/60 group-hover:text-[#ffb366]" />
+                  <Instagram className="text-[var(--brand-text-muted)] group-hover:text-[var(--brand-accent-primary)]" 
+                             style={{ width: 'clamp(1rem, 2vw, 1.25rem)', height: 'clamp(1rem, 2vw, 1.25rem)' }} />
                 </a>
                 <a
-                  href="#"
-                  className="w-10 h-10 bg-white/5 hover:bg-[#ffb366]/20 rounded-lg flex items-center justify-center transition-colors duration-300 group"
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-[var(--brand-accent-primary)]/30 hover:border-[var(--brand-accent-primary)] flex items-center justify-center luxury-transition group"
+                  aria-label="LinkedIn"
+                  style={{ width: 'clamp(2.5rem, 5vw, 3rem)', height: 'clamp(2.5rem, 5vw, 3rem)' }}
                 >
-                  <Linkedin className="w-5 h-5 text-white/60 group-hover:text-[#ffb366]" />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 bg-white/5 hover:bg-[#ffb366]/20 rounded-lg flex items-center justify-center transition-colors duration-300 group"
-                >
-                  <Globe className="w-5 h-5 text-white/60 group-hover:text-[#ffb366]" />
+                  <Linkedin className="text-[var(--brand-text-muted)] group-hover:text-[var(--brand-accent-primary)]" 
+                            style={{ width: 'clamp(1rem, 2vw, 1.25rem)', height: 'clamp(1rem, 2vw, 1.25rem)' }} />
                 </a>
               </div>
             </div>
 
+            {/* Separation Line */}
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-[var(--brand-accent-primary)]/30 to-transparent" 
+                 style={{ margin: 'clamp(2rem, 4vw, 3rem) 0' }} />
+
             {/* Business Hours */}
-            <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Geschäftszeiten</h4>
-              <div className="space-y-2 text-white/70">
-                <div className="flex justify-between">
-                  <span>Montag - Freitag</span>
-                  <span>9:00 - 18:00</span>
+            <div className="text-center lg:text-left">
+              <h4 className="heading-card" style={{ marginBottom: 'clamp(1rem, 2vw, 1.5rem)' }}>Verfügbarkeit</h4>
+              <div className="text-luxury responsive-spacing-sm">
+                <div className="flex justify-between border-b border-[var(--brand-accent-primary)]/10" 
+                     style={{ paddingBottom: 'clamp(0.5rem, 1vw, 0.75rem)' }}>
+                  <span className="text-subtle" style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>Montag - Freitag</span>
+                  <span className="font-light" style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>9:00 - 18:00</span>
                 </div>
-                <div className="flex justify-between">
-                  <span>Samstag</span>
-                  <span>10:00 - 16:00</span>
+                <div className="flex justify-between border-b border-[var(--brand-accent-primary)]/10" 
+                     style={{ paddingBottom: 'clamp(0.5rem, 1vw, 0.75rem)' }}>
+                  <span className="text-subtle" style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>Samstag</span>
+                  <span className="font-light" style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>10:00 - 16:00</span>
                 </div>
-                <div className="flex justify-between">
-                  <span>Sonntag</span>
-                  <span>Nach Vereinbarung</span>
+                <div className="flex justify-between border-b border-[var(--brand-accent-primary)]/10" 
+                     style={{ paddingBottom: 'clamp(0.5rem, 1vw, 0.75rem)' }}>
+                  <span className="text-subtle" style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>Sonntag</span>
+                  <span className="font-light" style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>Nach Vereinbarung</span>
                 </div>
               </div>
             </div>
@@ -114,9 +150,10 @@ export const ContactSection: React.FC = () => {
 
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            id="contact-form"
+            initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1.0, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true }}
           >
             <ContactForm />

@@ -65,12 +65,17 @@ export const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="glass-card p-8">
-      <h3 className="text-2xl font-bold text-white mb-6">Nachricht senden</h3>
+    <div className="glass-contact-card">
+      <h3 className="heading-card text-center lg:text-left" 
+          style={{ marginBottom: 'clamp(1.5rem, 3vw, 2rem)' }}>
+        Vertrauliche Anfrage
+      </h3>
+      <div className="luxury-line-left" style={{ marginBottom: 'clamp(1.5rem, 3vw, 2rem)' }} />
       
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div>
-          <label htmlFor="name" className="block text-white font-medium mb-2">
+          <label htmlFor="name" className="block text-subtle text-left" 
+                 style={{ marginBottom: 'clamp(0.5rem, 1vw, 0.75rem)', fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
             Name *
           </label>
           <Input
@@ -78,67 +83,102 @@ export const ContactForm: React.FC = () => {
             type="text"
             placeholder="Ihr Name"
             {...register('name')}
-            className={errors.name ? 'border-red-500' : ''}
+            className={errors.name ? 'border-red-400 focus:border-red-400 focus:ring-red-400/50' : ''}
+            style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)', padding: 'clamp(0.75rem, 2vw, 1rem)' }}
           />
           {errors.name && (
-            <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
+            <p className="text-red-400 font-light text-left" 
+               style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)', marginTop: 'clamp(0.25rem, 0.5vw, 0.5rem)' }}>
+              {errors.name.message}
+            </p>
           )}
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-white font-medium mb-2">
-            E-Mail *
+          <label htmlFor="email" className="block text-subtle text-left" 
+                 style={{ marginBottom: 'clamp(0.5rem, 1vw, 0.75rem)', fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
+            E-Mail Adresse *
           </label>
           <Input
             id="email"
             type="email"
             placeholder="ihre.email@beispiel.com"
             {...register('email')}
-            className={errors.email ? 'border-red-500' : ''}
+            className={errors.email ? 'border-red-400 focus:border-red-400 focus:ring-red-400/50' : ''}
+            style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)', padding: 'clamp(0.75rem, 2vw, 1rem)' }}
           />
           {errors.email && (
-            <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>
+            <p className="text-red-400 font-light text-left" 
+               style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)', marginTop: 'clamp(0.25rem, 0.5vw, 0.5rem)' }}>
+              {errors.email.message}
+            </p>
           )}
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-white font-medium mb-2">
-            Nachricht *
+          <label htmlFor="message" className="block text-subtle text-left" 
+                 style={{ marginBottom: 'clamp(0.5rem, 1vw, 0.75rem)', fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
+            Vertrauliche Nachricht *
           </label>
           <Textarea
             id="message"
-            placeholder="Erzählen Sie uns von Ihrem Projekt..."
-            rows={5}
+            placeholder="Erzählen Sie uns diskret von Ihrem Projekt..."
+            rows={6}
             {...register('message')}
-            className={errors.message ? 'border-red-500' : ''}
+            className={errors.message ? 'border-red-400 focus:border-red-400 focus:ring-red-400/50' : ''}
+            style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)', padding: 'clamp(0.75rem, 2vw, 1rem)' }}
           />
           {errors.message && (
-            <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>
+            <p className="text-red-400 font-light text-left" 
+               style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)', marginTop: 'clamp(0.25rem, 0.5vw, 0.5rem)' }}>
+              {errors.message.message}
+            </p>
           )}
         </div>
 
-        <Button
-          type="submit"
-          size="lg"
-          disabled={isSubmitting}
-          className="w-full"
-        >
-          {isSubmitting ? (
-            <>
-              <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-              Wird versendet...
-            </>
-          ) : (
-            <>
-              <Send className="w-4 h-4 mr-2" />
-              Nachricht senden
-            </>
-          )}
-        </Button>
+        <div className="flex justify-center" style={{ marginTop: 'clamp(2rem, 4vw, 3rem)' }}>
+          <Button
+            type="submit"
+            size="lg"
+            disabled={isSubmitting}
+            className="btn-luxury-filled"
+            style={{ 
+              fontSize: 'clamp(0.875rem, 2vw, 1rem)',
+              minWidth: 'clamp(12rem, 30vw, 16rem)',
+              justifyContent: 'center'
+            }}
+          >
+            {isSubmitting ? (
+              <>
+                <Loader2 
+                  style={{ 
+                    width: 'clamp(1rem, 2vw, 1.125rem)', 
+                    height: 'clamp(1rem, 2vw, 1.125rem)', 
+                    marginRight: 'clamp(0.5rem, 1vw, 0.75rem)' 
+                  }} 
+                  className="animate-spin" 
+                />
+                Wird versendet...
+              </>
+            ) : (
+              <>
+                <Send 
+                  style={{ 
+                    width: 'clamp(1rem, 2vw, 1.125rem)', 
+                    height: 'clamp(1rem, 2vw, 1.125rem)', 
+                    marginRight: 'clamp(0.5rem, 1vw, 0.75rem)' 
+                  }} 
+                />
+                Senden
+              </>
+            )}
+          </Button>
+        </div>
       </form>
 
-      <p className="text-white/50 text-sm mt-4 text-center">
-        * Pflichtfelder
+      <p className="text-[var(--brand-text-muted)] text-center font-light tracking-wide" 
+         style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)', marginTop: 'clamp(1.5rem, 3vw, 2rem)' }}>
+        * Pflichtfelder - Alle Anfragen werden diskret behandelt
       </p>
     </div>
   );

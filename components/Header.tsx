@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -10,7 +11,7 @@ export const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -43,49 +44,59 @@ export const Header: React.FC = () => {
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 luxury-transition border-b ${
           isScrolled 
-            ? 'bg-black/80 backdrop-blur-xl border-b border-white/10' 
-            : 'bg-transparent'
+            ? 'bg-[var(--brand-white)]/95 backdrop-blur-md border-[var(--brand-accent-primary)]/20 shadow-lg' 
+            : 'bg-[var(--brand-white)]/90 backdrop-blur-sm border-[var(--brand-accent-primary)]/10'
         }`}
       >
-        <div className="container-max section-padding">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#ffb366] to-[#ff9933] rounded-xl flex items-center justify-center">
-                <span className="text-black font-bold text-lg">LA</span>
+        <div className="container-max mx-auto" style={{ padding: 'clamp(1rem, 3vw, 2rem)' }}>
+          <div className="flex items-center justify-between" style={{ height: 'clamp(4rem, 5vw, 5rem)' }}>
+            {/* Luxury Logo */}
+            <div className="flex items-center responsive-gap-sm">
+              <div className="relative" style={{ width: 'clamp(1.5rem, 3vw, 2rem)', height: 'clamp(1.5rem, 3vw, 2rem)' }}>
+                <Image
+                  src="/images/logo/logo.png"
+                  alt="L.A. Agency Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-white">L.A. Agency</h1>
-                <p className="text-xs text-white/60 -mt-1">Vienna</p>
+                <h1 className="font-light text-[var(--brand-text-primary)] tracking-wide" 
+                    style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)' }}>L.A. AGENCY</h1>
+                <p className="text-[var(--brand-text-muted)] tracking-widest uppercase" 
+                   style={{ fontSize: 'clamp(0.625rem, 1vw, 0.75rem)', marginTop: '-0.125rem' }}>Vienna</p>
               </div>
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden lg:flex items-center responsive-gap-lg">
               <button
                 onClick={() => scrollToSection('services')}
-                className="text-white/80 hover:text-[#ffb366] transition-colors duration-200"
+                className="btn-luxury-minimal" 
+                style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
               >
                 Services
               </button>
               <button
                 onClick={() => scrollToSection('locations')}
-                className="text-white/80 hover:text-[#ffb366] transition-colors duration-200"
+                className="btn-luxury-minimal"
+                style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
               >
                 Locations
               </button>
               <button
                 onClick={() => scrollToSection('projects')}
-                className="text-white/80 hover:text-[#ffb366] transition-colors duration-200"
+                className="btn-luxury-minimal"
+                style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
               >
-                Projects
+                Projekte
               </button>
               <Button 
-                onClick={() => scrollToSection('contact')}
+                onClick={() => scrollToSection('contact-form')}
                 size="sm"
-                className="ml-4"
+                style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)', marginLeft: 'clamp(1rem, 2vw, 2rem)' }}
               >
                 Kontakt
               </Button>
@@ -93,7 +104,8 @@ export const Header: React.FC = () => {
 
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden text-white/80 hover:text-[#ffb366] transition-colors p-2"
+              className="lg:hidden text-[var(--brand-text-primary)] hover:text-[var(--brand-accent-primary)] luxury-transition-fast"
+              style={{ padding: 'clamp(0.5rem, 1vw, 0.75rem)' }}
               onClick={(e) => {
                 e.stopPropagation();
                 setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -101,9 +113,9 @@ export const Header: React.FC = () => {
               aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
+                <X style={{ width: 'clamp(1.25rem, 2.5vw, 1.5rem)', height: 'clamp(1.25rem, 2.5vw, 1.5rem)' }} />
               ) : (
-                <Menu className="w-6 h-6" />
+                <Menu style={{ width: 'clamp(1.25rem, 2.5vw, 1.5rem)', height: 'clamp(1.25rem, 2.5vw, 1.5rem)' }} />
               )}
             </button>
           </div>
@@ -112,34 +124,63 @@ export const Header: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 md:hidden">
-          <div className="fixed inset-0 bg-black/80 backdrop-blur-xl" />
-          <div className="fixed top-20 left-0 right-0 bg-[#1a1a1a]/95 backdrop-blur-xl border-b border-white/10">
-            <nav className="container-max section-padding py-8">
-              <div className="flex flex-col space-y-6">
+        <div className="fixed inset-0 z-40 lg:hidden">
+          <div className="fixed inset-0 bg-[var(--brand-white)]/80 backdrop-blur-md" />
+          <div className="fixed left-0 right-0 bg-[var(--brand-white)] border-b border-[var(--brand-accent-primary)]/20 shadow-lg" 
+               style={{ 
+                 top: 'clamp(4rem, 5vw, 5rem)',
+                 minHeight: '60vh',
+                 zIndex: 41
+               }}>
+            <nav className="container-max mx-auto" 
+                 style={{ padding: 'clamp(2rem, 4vw, 3rem)' }}>
+              <div className="flex flex-col text-center responsive-spacing-md">
                 <button
                   onClick={() => scrollToSection('services')}
-                  className="text-left text-lg text-white/80 hover:text-[#ffb366] transition-colors duration-200 py-2"
+                  className="text-[var(--brand-text-primary)] hover:text-[var(--brand-accent-primary)] luxury-transition tracking-wide font-light"
+                  style={{ 
+                    fontSize: 'clamp(1.125rem, 3vw, 1.25rem)', 
+                    padding: 'clamp(0.75rem, 2vw, 1rem)',
+                    display: 'block',
+                    width: '100%'
+                  }}
                 >
-                  Services
+                  SERVICES
                 </button>
                 <button
                   onClick={() => scrollToSection('locations')}
-                  className="text-left text-lg text-white/80 hover:text-[#ffb366] transition-colors duration-200 py-2"
+                  className="text-[var(--brand-text-primary)] hover:text-[var(--brand-accent-primary)] luxury-transition tracking-wide font-light"
+                  style={{ 
+                    fontSize: 'clamp(1.125rem, 3vw, 1.25rem)', 
+                    padding: 'clamp(0.75rem, 2vw, 1rem)',
+                    display: 'block',
+                    width: '100%'
+                  }}
                 >
-                  Locations
+                  LOCATIONS
                 </button>
                 <button
                   onClick={() => scrollToSection('projects')}
-                  className="text-left text-lg text-white/80 hover:text-[#ffb366] transition-colors duration-200 py-2"
+                  className="text-[var(--brand-text-primary)] hover:text-[var(--brand-accent-primary)] luxury-transition tracking-wide font-light"
+                  style={{ 
+                    fontSize: 'clamp(1.125rem, 3vw, 1.25rem)', 
+                    padding: 'clamp(0.75rem, 2vw, 1rem)',
+                    display: 'block',
+                    width: '100%'
+                  }}
                 >
-                  Projects
+                  PROJEKTE
                 </button>
-                <div className="pt-4">
+                <div style={{ paddingTop: 'clamp(1.5rem, 3vw, 2rem)' }}>
                   <Button 
-                    onClick={() => scrollToSection('contact')}
+                    onClick={() => scrollToSection('contact-form')}
                     className="w-full"
                     size="lg"
+                    style={{ 
+                      fontSize: 'clamp(1rem, 2.5vw, 1.125rem)', 
+                      padding: 'clamp(1rem, 3vw, 1.25rem) clamp(1.5rem, 4vw, 2rem)',
+                      minHeight: 'clamp(3rem, 8vw, 3.5rem)'
+                    }}
                   >
                     Kontakt aufnehmen
                   </Button>

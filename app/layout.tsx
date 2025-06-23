@@ -1,24 +1,29 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import { Background } from '../components/Background';
+import { CustomCursor } from '../components/CustomCursor';
+import { MouseProvider } from '../components/MouseContext';
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'L.A. Agency Vienna - Creating Moments. Building Brands.',
+  title: 'L.A. Agency Vienna',
   description: 'Exklusives Marketing, PR und Eventmanagement in Wien. Spezialisiert auf Marketing, Branding, Events und Content Produktion.',
   keywords: 'Marketing, PR, Eventmanagement, Wien, Austria, Branding, Content Produktion, Projektmanagement',
   authors: [{ name: 'L.A. Agency Vienna' }],
   creator: 'L.A. Agency Vienna',
   publisher: 'L.A. Agency Vienna',
   robots: 'index, follow',
+  metadataBase: new URL('https://la-agency.vienna'),
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
     apple: '/favicon.svg',
   },
   openGraph: {
-    title: 'L.A. Agency Vienna - Creating Moments. Building Brands.',
+    title: 'L.A. Agency Vienna',
     description: 'Exklusives Marketing, PR und Eventmanagement in Wien',
     url: 'https://la-agency.vienna', 
     siteName: 'L.A. Agency Vienna',
@@ -45,8 +50,18 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.svg" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
       </head>
-      <body className={`${inter.className} bg-[#1a1a1a] text-white antialiased`}>
-        {children}
+      <body className={`${inter.className} bg-[#f7f5f3] text-[#2d2d2d] antialiased cursor-none`}>
+        {/* Animated Global Background */}
+        <Background />
+        
+        {/* Global Grid Pattern */}
+        <div className="fixed inset-0 bg-luxury-pattern opacity-20 pointer-events-none z-10" />
+        
+        <MouseProvider>
+          <CustomCursor />
+          {children}
+        </MouseProvider>
+        <Analytics />
       </body>
     </html>
   );

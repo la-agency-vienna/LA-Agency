@@ -11,105 +11,135 @@ import {
 
 const locations = [
   {
-    id: 'loft-z13',
-    title: 'Loft Z13',
-    description: 'Ein außergewöhnlicher Veranstaltungsort im Herzen Wiens. Das Loft Z13 bietet eine einzigartige Atmosphäre für exklusive Events, Produktpräsentationen und unvergessliche Feiern. Mit moderner Ausstattung und stilvollem Ambiente ist es der perfekte Rahmen für Ihre besonderen Anlässe.',
-    imageUrl: '/images/loft-z13.jpg',
-    websiteUrl: 'https://loftz13.com',
-    features: ['Moderne Ausstattung', 'Zentrale Lage', 'Exklusives Ambiente', 'Flexible Raumgestaltung']
-  },
-  {
     id: 'palais-esterhazy',
     title: 'Palais Esterházy',
-    description: 'Erleben Sie Geschichte hautnah im prächtigen Palais Esterházy. Diese historische Location verbindet klassische Eleganz mit modernem Komfort und bietet den idealen Rahmen für Gala-Events, Geschäftstermine und kulturelle Veranstaltungen höchster Ansprüche.',
+    description: 'Historisches Flair im Herzen Wiens für elegante Events & Pressetermine. Jahrhundertealte Eleganz trifft auf moderne Raffinesse für Veranstaltungen von höchster Distinktion.',
     imageUrl: '/images/palais-esterhazy.jpg',
     websiteUrl: 'https://palais-esterhazy.net',
-    features: ['Historisches Ambiente', 'Erstklassige Akustik', 'Repräsentative Räume', 'Kulturelles Erbe']
+    features: ['Historisches Flair', 'Zentrale Wien Lage', 'Elegante Events', 'Pressetermine']
+  },
+  {
+    id: 'loft-z13',
+    title: 'Loft Z13',
+    description: 'Urbaner Industrial-Chic mit Dachterrasse für moderne Markenerlebnisse. Ein außergewöhnlicher Veranstaltungsort mit minimalistischer Eleganz und zeitloser Ästhetik.',
+    imageUrl: '/images/loft-z13.jpg',
+    websiteUrl: 'https://loftz13.com',
+    features: ['Industrial-Chic', 'Dachterrasse', 'Moderne Markenerlebnisse', 'Urbaner Style']
   }
 ];
 
 export const LocationsSection: React.FC = () => {
   return (
-    <section id="locations" className="section-padding">
-      <div className="container-max">
+    <section id="locations" className="relative" style={{ 
+      paddingLeft: 'clamp(1.5rem, 5vw, 8rem)', 
+      paddingRight: 'clamp(1.5rem, 5vw, 8rem)', 
+      paddingTop: 'clamp(2rem, 4vw, 4rem)', 
+      paddingBottom: 'clamp(4rem, 8vw, 8rem)' 
+    }}>
+
+      
+      <div className="container-max relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center"
+          style={{ marginBottom: 'clamp(3rem, 8vw, 8rem)' }}
         >
-          <h2 className="heading-section">Exklusive Locations</h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            Entdecken Sie unsere handverlesenen Veranstaltungsorte für unvergessliche Events.
+          <h2 className="heading-section">Eventmanagement mit Stil</h2>
+          <p className="text-luxury mx-auto leading-relaxed container-narrow" 
+             style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', paddingLeft: 'clamp(1rem, 3vw, 2rem)', paddingRight: 'clamp(1rem, 3vw, 2rem)' }}>
+            Ob Produktlaunch, Gala oder Networking-Event, wir bieten Full-Service-Planung an außergewöhnlichen Orten.
+          </p>
+          <h3 className="heading-card" style={{ marginTop: 'clamp(1rem, 2vw, 1.5rem)', marginBottom: 'clamp(1rem, 2vw, 1.5rem)' }}>
+            Exklusiv bei uns im Portfolio:
+          </h3>
+          <p className="text-luxury mx-auto leading-relaxed container-narrow" 
+             style={{ fontSize: 'clamp(0.875rem, 2vw, 1.125rem)', marginTop: 'clamp(1rem, 2vw, 1.5rem)', paddingLeft: 'clamp(1rem, 3vw, 2rem)', paddingRight: 'clamp(1rem, 3vw, 2rem)' }}>
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 container-max mx-auto responsive-gap-lg">
           {locations.map((location, index) => (
             <motion.div
               key={location.id}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 1.0, delay: index * 0.3, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="text-center"
+              className="group"
             >
-              <div className="glass-card p-8 mb-8 group hover:scale-105 transition-transform duration-300">
-                <div className="aspect-video bg-gradient-to-br from-[#ffb366]/20 to-[#ff9933]/20 rounded-2xl mb-6 flex items-center justify-center">
-                  <div className="text-6xl font-bold text-[#ffb366]/40">
-                    {location.title.split(' ')[0].charAt(0)}
+              <div className="luxury-card hover-lift metallic-shine-hover">
+                <div className="aspect-[4/3] bg-gradient-to-br from-[var(--brand-accent-primary)]/10 to-[var(--brand-accent-secondary)]/10 mb-8 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 bg-luxury-pattern opacity-20" />
+                  <div className="text-6xl font-light text-[var(--brand-accent-primary)] tracking-wider">
+                    {location.title.charAt(0)}
                   </div>
                 </div>
                 
-                <h3 className="text-2xl font-bold text-white mb-4">{location.title}</h3>
+                <h3 className="heading-card group-hover:text-[var(--brand-accent-primary)] luxury-transition text-center lg:text-left" 
+                    style={{ marginBottom: 'clamp(1rem, 3vw, 1.5rem)' }}>
+                  {location.title}
+                </h3>
                 
-                <p className="text-white/70 mb-6 leading-relaxed">
-                  {location.description.split('.')[0]}.
+                <p className="text-luxury leading-relaxed text-center lg:text-left" 
+                   style={{ marginBottom: 'clamp(1.5rem, 4vw, 2rem)', fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
+                  {location.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 justify-center mb-6">
+                <div className="flex flex-wrap justify-center lg:justify-start responsive-gap-sm" 
+                     style={{ marginBottom: 'clamp(1.5rem, 4vw, 2rem)' }}>
                   {location.features.map((feature) => (
                     <span
                       key={feature}
-                      className="px-3 py-1 bg-[#ffb366]/10 text-[#ffb366] text-sm rounded-full border border-[#ffb366]/20"
+                      className="text-subtle border border-[var(--brand-accent-primary)]/20 text-[var(--brand-accent-primary)] text-center"
+                      style={{ 
+                        padding: 'clamp(0.5rem, 1vw, 0.75rem) clamp(0.75rem, 2vw, 1rem)',
+                        fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)'
+                      }}
                     >
                       {feature}
                     </span>
                   ))}
                 </div>
-              </div>
 
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button size="lg" variant="outline" className="w-full">
-                    {location.title} entdecken
-                  </Button>
-                </DialogTrigger>
-                <LocationModal location={location} />
-              </Dialog>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button size="lg" variant="outline" className="w-full" 
+                            style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)', padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem)' }}>
+                      {location.title} entdecken
+                    </Button>
+                  </DialogTrigger>
+                  <LocationModal location={location} />
+                </Dialog>
+              </div>
             </motion.div>
           ))}
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center"
+          style={{ marginTop: 'clamp(3rem, 8vw, 8rem)' }}
         >
-          <p className="text-white/60 mb-6">
+          <p className="text-luxury" 
+             style={{ marginBottom: 'clamp(2rem, 4vw, 3rem)', fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
             Suchen Sie nach der perfekten Location für Ihr Event?
           </p>
           <Button
             onClick={() => {
-              const element = document.getElementById('contact');
+              const element = document.getElementById('contact-form');
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }}
             size="lg"
+            className="btn-luxury"
+            style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)', padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 3rem)' }}
           >
-            Beratung anfragen
+            Location-Beratung
           </Button>
         </motion.div>
       </div>

@@ -2,39 +2,46 @@
 
 import React from 'react';
 import { Instagram, Linkedin, Globe, Heart } from 'lucide-react';
+import Image from 'next/image';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="section-padding border-t border-white/10">
+    <footer className="section-padding border-t border-[var(--brand-accent-primary)]/20 bg-[var(--brand-bg-secondary)]">
       <div className="container-max">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-          {/* Logo & Tagline */}
-          <div className="text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start space-x-3 mb-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#ffb366] to-[#ff9933] rounded-lg flex items-center justify-center">
-                <span className="text-black font-bold text-sm">LA</span>
+        <div className="grid grid-cols-1 lg:grid-cols-3 items-center text-center lg:text-left responsive-gap-lg">
+          {/* Luxury Logo & Tagline */}
+          <div>
+            <div className="flex items-center justify-center lg:justify-start responsive-gap-sm" 
+                 style={{ marginBottom: 'clamp(1rem, 2vw, 1.5rem)' }}>
+              <div className="relative" style={{ width: 'clamp(1.5rem, 3vw, 2rem)', height: 'clamp(1.5rem, 3vw, 2rem)' }}>
+                <Image
+                  src="/images/logo/logo.png"
+                  alt="L.A. Agency Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white">L.A. Agency</h3>
-                <p className="text-xs text-white/60 -mt-1">Vienna</p>
+                <h3 className="font-light text-[var(--brand-text-primary)] tracking-wide" 
+                    style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)' }}>L.A. AGENCY</h3>
+                <p className="text-[var(--brand-text-muted)] tracking-widest uppercase" 
+                   style={{ fontSize: 'clamp(0.625rem, 1vw, 0.75rem)', marginTop: '-0.125rem' }}>Vienna</p>
               </div>
             </div>
-            <p className="text-sm text-[#ffb366] font-medium">
-              Creating Moments. Building Brands.
-            </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Elegant Navigation */}
           <div className="text-center">
-            <nav className="flex flex-wrap justify-center gap-6 text-sm">
+            <nav className="flex flex-wrap justify-center responsive-gap-md">
               <button
                 onClick={() => {
                   const element = document.getElementById('services');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="text-white/70 hover:text-[#ffb366] transition-colors duration-200"
+                className="btn-luxury-minimal"
+                style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
               >
                 Services
               </button>
@@ -43,7 +50,8 @@ export const Footer: React.FC = () => {
                   const element = document.getElementById('locations');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="text-white/70 hover:text-[#ffb366] transition-colors duration-200"
+                className="btn-luxury-minimal"
+                style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
               >
                 Locations
               </button>
@@ -52,7 +60,8 @@ export const Footer: React.FC = () => {
                   const element = document.getElementById('projects');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="text-white/70 hover:text-[#ffb366] transition-colors duration-200"
+                className="btn-luxury-minimal"
+                style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
               >
                 Projekte
               </button>
@@ -61,63 +70,81 @@ export const Footer: React.FC = () => {
                   const element = document.getElementById('contact');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="text-white/70 hover:text-[#ffb366] transition-colors duration-200"
+                className="btn-luxury-minimal"
+                style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
               >
                 Kontakt
               </button>
             </nav>
           </div>
 
-          {/* Social Media */}
-          <div className="text-center md:text-right">
-            <div className="flex justify-center md:justify-end space-x-4 mb-3">
+          {/* Refined Social Media */}
+          <div className="text-center lg:text-right">
+            <div className="flex justify-center lg:justify-end responsive-gap-md" 
+                 style={{ marginBottom: 'clamp(1rem, 2vw, 1.5rem)' }}>
               <a
-                href="#"
-                className="w-8 h-8 bg-white/5 hover:bg-[#ffb366]/20 rounded-lg flex items-center justify-center transition-colors duration-300 group"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-[var(--brand-accent-primary)]/30 hover:border-[var(--brand-accent-primary)] flex items-center justify-center luxury-transition group"
                 aria-label="Instagram"
+                style={{ width: 'clamp(2rem, 4vw, 2.5rem)', height: 'clamp(2rem, 4vw, 2.5rem)' }}
               >
-                <Instagram className="w-4 h-4 text-white/60 group-hover:text-[#ffb366]" />
+                <Instagram className="text-[var(--brand-text-muted)] group-hover:text-[var(--brand-accent-primary)]" 
+                           style={{ width: 'clamp(1rem, 2vw, 1.125rem)', height: 'clamp(1rem, 2vw, 1.125rem)' }} />
               </a>
               <a
-                href="#"
-                className="w-8 h-8 bg-white/5 hover:bg-[#ffb366]/20 rounded-lg flex items-center justify-center transition-colors duration-300 group"
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-[var(--brand-accent-primary)]/30 hover:border-[var(--brand-accent-primary)] flex items-center justify-center luxury-transition group"
                 aria-label="LinkedIn"
+                style={{ width: 'clamp(2rem, 4vw, 2.5rem)', height: 'clamp(2rem, 4vw, 2.5rem)' }}
               >
-                <Linkedin className="w-4 h-4 text-white/60 group-hover:text-[#ffb366]" />
+                <Linkedin className="text-[var(--brand-text-muted)] group-hover:text-[var(--brand-accent-primary)]" 
+                          style={{ width: 'clamp(1rem, 2vw, 1.125rem)', height: 'clamp(1rem, 2vw, 1.125rem)' }} />
               </a>
               <a
                 href="#"
-                className="w-8 h-8 bg-white/5 hover:bg-[#ffb366]/20 rounded-lg flex items-center justify-center transition-colors duration-300 group"
+                className="border border-[var(--brand-accent-primary)]/30 hover:border-[var(--brand-accent-primary)] flex items-center justify-center luxury-transition group"
                 aria-label="Website"
+                style={{ width: 'clamp(2rem, 4vw, 2.5rem)', height: 'clamp(2rem, 4vw, 2.5rem)' }}
               >
-                <Globe className="w-4 h-4 text-white/60 group-hover:text-[#ffb366]" />
+                <Globe className="text-[var(--brand-text-muted)] group-hover:text-[var(--brand-accent-primary)]" 
+                       style={{ width: 'clamp(1rem, 2vw, 1.125rem)', height: 'clamp(1rem, 2vw, 1.125rem)' }} />
               </a>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-white/5">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-4 text-sm text-white/50">
-              <p>&copy; {currentYear} L.A. Agency Vienna. Alle Rechte vorbehalten.</p>
-            </div>
-            
-            <div className="flex items-center space-x-6 text-sm">
-              <a href="/imprint" className="text-white/50 hover:text-[#ffb366] transition-colors">
+        {/* Elegant Divider */}
+        <div className="luxury-divider" style={{ margin: 'clamp(3rem, 6vw, 4rem) 0' }} />
+
+        {/* Refined Bottom Section */}
+        <div className="flex flex-col lg:flex-row justify-between items-center text-center lg:text-left responsive-gap-lg">
+          <div className="text-[var(--brand-text-muted)] font-light" 
+               style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>
+            <p>&copy; {currentYear} L.A. Agency Vienna. Alle Rechte vorbehalten.</p>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-end responsive-gap-md" 
+               style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>
+            <div className="flex flex-col sm:flex-row items-center responsive-gap-sm">
+              <a href="/imprint" className="text-[var(--brand-text-muted)] hover:text-[var(--brand-accent-primary)] luxury-transition font-light tracking-wide">
                 Impressum
               </a>
-              <a href="/privacy" className="text-white/50 hover:text-[#ffb366] transition-colors">
+              <a href="/privacy" className="text-[var(--brand-text-muted)] hover:text-[var(--brand-accent-primary)] luxury-transition font-light tracking-wide">
                 Datenschutz
               </a>
-              <a href="/terms" className="text-white/50 hover:text-[#ffb366] transition-colors">
+              <a href="/terms" className="text-[var(--brand-text-muted)] hover:text-[var(--brand-accent-primary)] luxury-transition font-light tracking-wide">
                 AGB
               </a>
-              <div className="flex items-center text-white/50">
-                <span className="mr-1">Made with</span>
-                <Heart className="w-4 h-4 text-red-400 fill-current" />
-                <span className="ml-1">in Vienna</span>
-              </div>
+            </div>
+            <div className="flex items-center text-[var(--brand-text-muted)] font-light">
+              <span style={{ marginRight: 'clamp(0.25rem, 0.5vw, 0.5rem)' }}>Made with</span>
+              <Heart className="text-[var(--brand-accent-primary)] fill-current" 
+                     style={{ width: 'clamp(0.875rem, 1.5vw, 1rem)', height: 'clamp(0.875rem, 1.5vw, 1rem)' }} />
+              <span style={{ marginLeft: 'clamp(0.25rem, 0.5vw, 0.5rem)' }}>by Raw Fiction e.U.</span>
             </div>
           </div>
         </div>

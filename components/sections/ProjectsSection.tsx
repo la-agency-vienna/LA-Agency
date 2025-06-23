@@ -3,123 +3,175 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 const projects = [
   {
     id: 1,
-    title: 'Luxury Brand Launch',
-    client: 'Premium Fashion House',
-    description: 'Erfolgreiche Markteinführung einer Luxus-Modemarke mit integrierter Marketing- und PR-Strategie.',
-    category: 'Marketing & Branding',
-    image: '/images/project-1.jpg'
+    title: 'Beauty Brand Relaunch',
+    category: 'Rebranding',
+    description: 'Komplettes Rebranding inkl. PR-Kampagne, Influencer-Kooperation und Launch Event in Wien.',
+    image: '/images/projects/brand-relaunch.png',
+    tags: ['Rebranding', 'PR-Kampagne', 'Influencer', 'Launch Event'],
+    link: 'https://google.com'
   },
   {
     id: 2,
-    title: 'Corporate Gala Event',
-    client: 'Fortune 500 Company',
-    description: 'Exklusive Firmenfeier im Palais Esterházy mit 300 VIP-Gästen und internationaler Presse.',
-    category: 'Eventmanagement',
-    image: '/images/project-2.jpg'
+    title: 'Tech Start-up Launch',
+    category: 'Markteinführung',
+    description: 'Markteintrittsstrategie inkl. Medienarbeit, Eventplanung & digitaler Kampagne.',
+    image: '/images/projects/tech-startup.png',
+    tags: ['Markteinführung', 'Medienarbeit', 'Digital Marketing'],
+    link: 'https://google.com'
   },
   {
     id: 3,
-    title: 'Digital Campaign',
-    client: 'Tech Startup',
-    description: 'Innovative Social Media Kampagne für Produktlaunch mit viraler Reichweite.',
-    category: 'Content Produktion',
-    image: '/images/project-3.jpg'
+    title: 'Luxury Lifestyle Event',
+    category: 'Premium Event',
+    description: 'Premium-Event mit über 300 Gästen, inklusive Location-Scouting, Gästelistenmanagement und Pressebetreuung.',
+    image: '/images/projects/premium-event.png',
+    tags: ['Premium Event', 'Location-Scouting', 'Pressebetreuung'],
+    link: 'https://google.com'
   },
   {
     id: 4,
-    title: 'Product Relaunch',
-    client: 'Established Brand',
-    description: 'Komplette Neupositionierung und Markteinführung eines traditionsreichen Produkts.',
-    category: 'Product Relaunch',
-    image: '/images/project-4.jpg'
+    title: 'Social Media Kampagne für F&B Brand',
+    category: 'Digital Campaign',
+    description: 'Content Creation & Influencer-Kollaboration mit über 1 Mio. organischer Reichweite.',
+    image: '/images/projects/digital-campaign.png',
+    tags: ['Content Creation', 'Influencer Marketing', '1M+ Reichweite'],
+    link: 'https://google.com'
   }
 ];
 
+
+
 export const ProjectsSection: React.FC = () => {
   return (
-    <section id="projects" className="section-padding bg-gradient-to-b from-transparent via-black/20 to-transparent">
-      <div className="container-max">
+    <section id="projects" className="relative" style={{ 
+      paddingLeft: 'clamp(1.5rem, 5vw, 8rem)', 
+      paddingRight: 'clamp(1.5rem, 5vw, 8rem)', 
+      paddingTop: 'clamp(2rem, 4vw, 4rem)', 
+      paddingBottom: 'clamp(4rem, 8vw, 8rem)' 
+    }}>
+      <div className="container-max relative z-10">
+        
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center"
+          style={{ marginBottom: 'clamp(3rem, 8vw, 8rem)' }}
         >
-          <h2 className="heading-section">Unsere Projekte</h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            Entdecken Sie eine Auswahl unserer erfolgreichsten Projekte und lassen Sie sich inspirieren.
+          <h2 className="heading-section">KUNDENPROJEKTE</h2>
+          <h3 className="heading-card mb-6">Erfolgsstories & Projekte</h3>
+          <p className="text-luxury mx-auto leading-relaxed container-narrow" 
+             style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', paddingLeft: 'clamp(1rem, 3vw, 2rem)', paddingRight: 'clamp(1rem, 3vw, 2rem)' }}>
+            Wir glauben an Ergebnisse, die für sich sprechen. Hier ein Auszug unserer Projekte:
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Featured Projects */}
+        <div className="grid grid-cols-1 md:grid-cols-2 container-max mx-auto responsive-gap-lg" 
+             style={{ marginBottom: 'clamp(4rem, 8vw, 6rem)' }}>
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 1.0, delay: index * 0.2, ease: "easeOut" }}
               viewport={{ once: true }}
+              className="group"
             >
-              <Card className="h-full group cursor-pointer hover:scale-[1.02] transition-all duration-300">
-                <CardContent className="p-0">
-                  {/* Image Placeholder */}
-                  <div className="aspect-video bg-gradient-to-br from-[#ffb366]/20 to-[#ff9933]/20 rounded-t-3xl flex items-center justify-center relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    <div className="relative text-center z-10">
-                      <div className="text-4xl font-bold text-[#ffb366]/60 mb-2">
-                        {project.id}
-                      </div>
-                      <p className="text-white/40 text-sm">Projektbild</p>
-                    </div>
+              <div className="luxury-card hover-lift">
+                <div className="aspect-[4/3] mb-6 relative overflow-hidden rounded-lg">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                
+                <div className="space-y-4">
+                  <div>
+                    <span className="text-subtle text-[var(--brand-accent-primary)] border border-[var(--brand-accent-primary)]/20" 
+                          style={{ padding: 'clamp(0.25rem, 0.5vw, 0.5rem) clamp(0.5rem, 1vw, 0.75rem)', fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>
+                      {project.category}
+                    </span>
                   </div>
                   
-                  <div className="p-8">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="px-3 py-1 bg-[#ffb366]/10 text-[#ffb366] text-xs font-medium rounded-full border border-[#ffb366]/20">
-                        {project.category}
+                  <h3 className="heading-card group-hover:text-[var(--brand-accent-primary)] luxury-transition">
+                    {project.title}
+                  </h3>
+                  
+                  <p className="text-luxury leading-relaxed" 
+                     style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap responsive-gap-sm">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-subtle border border-[var(--brand-accent-primary)]/10 text-[var(--brand-text-muted)]"
+                        style={{ 
+                          padding: 'clamp(0.25rem, 0.5vw, 0.5rem) clamp(0.5rem, 1vw, 0.75rem)',
+                          fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)'
+                        }}
+                      >
+                        {tag}
                       </span>
-                      <span className="text-white/50 text-sm">{project.client}</span>
-                    </div>
-                    
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#ffb366] transition-colors duration-300">
-                      {project.title}
-                    </h3>
-                    
-                    <p className="text-white/70 leading-relaxed">
-                      {project.description}
-                    </p>
+                    ))}
                   </div>
-                </CardContent>
-              </Card>
+
+                  <div className="pt-2">
+                    <Button
+                      onClick={() => {
+                        window.open(project.link, '_blank');
+                      }}
+                      variant="outline"
+                      size="sm"
+                      className="text-xs"
+                    >
+                      Projekt ansehen
+                    </Button>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
 
+
+
         {/* Call to Action */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center"
         >
-          <p className="text-white/60 mb-6">
-            Möchten Sie Ihr nächstes Projekt mit uns realisieren?
+          <p className="text-luxury" 
+             style={{ marginBottom: 'clamp(2rem, 4vw, 3rem)', fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
+            Bereit für Ihr nächstes außergewöhnliches Event?
           </p>
-          <button
+          <Button
             onClick={() => {
-              const element = document.getElementById('contact');
+              const element = document.getElementById('contact-form');
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="text-[#ffb366] hover:text-[#ff9933] font-semibold transition-colors duration-200 text-lg underline underline-offset-4 hover:underline-offset-8"
+            size="lg"
+            className="btn-luxury"
+            style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)', padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 3rem)' }}
           >
-            Projekt besprechen →
-          </button>
+            Projekt besprechen
+          </Button>
         </motion.div>
       </div>
     </section>
