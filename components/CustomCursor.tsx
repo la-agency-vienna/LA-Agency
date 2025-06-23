@@ -16,15 +16,17 @@ export const CustomCursor: React.FC = () => {
     const handleMouseLeave = () => setIsVisible(false);
     const handleMouseEnter = () => setIsVisible(true);
 
-    window.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseleave', handleMouseLeave);
-    document.addEventListener('mouseenter', handleMouseEnter);
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      window.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseleave', handleMouseLeave);
+      document.addEventListener('mouseenter', handleMouseEnter);
 
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseleave', handleMouseLeave);
-      document.removeEventListener('mouseenter', handleMouseEnter);
-    };
+      return () => {
+        window.removeEventListener('mousemove', handleMouseMove);
+        document.removeEventListener('mouseleave', handleMouseLeave);
+        document.removeEventListener('mouseenter', handleMouseEnter);
+      };
+    }
   }, []);
 
   if (!isVisible) return null;

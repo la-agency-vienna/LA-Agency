@@ -24,15 +24,17 @@ export const MouseProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     const handleMouseDown = () => setIsPressed(true);
     const handleMouseUp = () => setIsPressed(false);
 
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mousedown', handleMouseDown);
-    window.addEventListener('mouseup', handleMouseUp);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('mousedown', handleMouseDown);
+      window.addEventListener('mouseup', handleMouseUp);
 
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mousedown', handleMouseDown);
-      window.removeEventListener('mouseup', handleMouseUp);
-    };
+      return () => {
+        window.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener('mousedown', handleMouseDown);
+        window.removeEventListener('mouseup', handleMouseUp);
+      };
+    }
   }, []);
 
   return (

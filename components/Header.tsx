@@ -11,11 +11,15 @@ export const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (typeof window !== 'undefined') {
+        setIsScrolled(window.scrollY > 20);
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
   }, []);
 
   // Close mobile menu when clicking outside or on a link
@@ -24,19 +28,23 @@ export const Header: React.FC = () => {
       setIsMobileMenuOpen(false);
     };
 
-    if (isMobileMenuOpen) {
+    if (isMobileMenuOpen && typeof document !== 'undefined') {
       document.addEventListener('click', handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener('click', handleClickOutside);
+      if (typeof document !== 'undefined') {
+        document.removeEventListener('click', handleClickOutside);
+      }
     };
   }, [isMobileMenuOpen]);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (typeof document !== 'undefined') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     setIsMobileMenuOpen(false); // Close mobile menu after navigation
   };
