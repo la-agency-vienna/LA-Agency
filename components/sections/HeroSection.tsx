@@ -3,46 +3,28 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useMouse } from '../MouseContext';
+import { VideoBackground } from '../VideoBackground';
 
 export const HeroSection: React.FC = () => {
   const { mousePosition } = useMouse();
   const titleRef = useRef(null);
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Detect mobile device
-  useEffect(() => {
-    const checkMobile = () => {
-      if (typeof window !== 'undefined') {
-        // eslint-disable-next-line no-restricted-globals
-        setIsMobile(window.innerWidth < 768);
-      }
-    };
-    
-    checkMobile();
-    if (typeof window !== 'undefined') {
-      // eslint-disable-next-line no-restricted-globals
-      window.addEventListener('resize', checkMobile);
-      // eslint-disable-next-line no-restricted-globals
-      return () => window.removeEventListener('resize', checkMobile);
-    }
-  }, []);
-
-  // Function to split text into individual characters
-  const splitTextIntoChars = (text: string) => {
-    return text.split('').map((char, index) => ({
-      char: char === ' ' ? '\u00A0' : char, // Non-breaking space
-      index
-    }));
-  };
 
   return (
-    <section className="relative" style={{ 
+    <section className="relative overflow-hidden" style={{ 
       height: '100vh',
       marginTop: '5rem',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center'
     }}>
+      {/* Video Background */}
+      <VideoBackground 
+        videoSrc="/videos/background.mp4" 
+        opacity={0.3}
+        blur={1.5}
+        className="z-0"
+      />
+      
       <div className="container-max relative z-30 text-center" style={{ paddingLeft: 'clamp(1.5rem, 5vw, 3rem)', paddingRight: 'clamp(1.5rem, 5vw, 3rem)' }}>
         
         {/* Main Headline - Desktop: Wave animations, Mobile: Simple */}
@@ -55,88 +37,26 @@ export const HeroSection: React.FC = () => {
           className="relative"
         >
           <h1 className="heading-hero">
-            {/* L.A. AGENCY - Desktop: Wave animation, Mobile: Simple */}
-            <div className="wave-text-container">
-              {isMobile ? (
-                // Mobile: Simple text animation
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1, delay: 0.4 }}
-                >
-                  L.A. AGENCY
-                </motion.div>
-              ) : (
-                // Desktop: Complex wave animation
-                splitTextIntoChars("L.A. AGENCY").map(({ char, index }) => (
-                  <motion.span
-                    key={`la-${index}`}
-                    className="wave-char inline-block"
-                    data-char={char}
-                    animate={{
-                      y: [0, -15, 0],
-                      rotateX: [0, 10, 0],
-                      rotateY: [0, 5, 0],
-                      scale: [1, 1.05, 1]
-                    }}
-                    transition={{
-                      duration: 3.5,
-                      delay: index * 0.08,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      repeatDelay: 0
-                    }}
-                    style={{
-                      transformOrigin: 'center bottom',
-                      transformStyle: 'preserve-3d'
-                    }}
-                  >
-                    {char}
-                  </motion.span>
-                ))
-              )}
+            {/* L.A. AGENCY - Static text */}
+            <div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.4 }}
+              >
+                L.A. AGENCY
+              </motion.div>
             </div>
             
-            {/* VIENNA - Desktop: Wave animation, Mobile: Simple */}
-            <div className="wave-text-container block text-accent mt-6">
-              {isMobile ? (
-                // Mobile: Simple text animation
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1, delay: 0.6 }}
-                >
-                  VIENNA
-                </motion.div>
-              ) : (
-                // Desktop: Complex wave animation
-                splitTextIntoChars("VIENNA").map(({ char, index }) => (
-                  <motion.span
-                    key={`vienna-${index}`}
-                    className="wave-char inline-block"
-                    data-char={char}
-                    animate={{
-                      y: [0, -12, 0],
-                      rotateX: [0, -8, 0],
-                      rotateY: [0, -3, 0],
-                      scale: [1, 1.03, 1]
-                    }}
-                    transition={{
-                      duration: 3.2,
-                      delay: 0.3 + index * 0.12,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      repeatDelay: 0
-                    }}
-                    style={{
-                      transformOrigin: 'center bottom',
-                      transformStyle: 'preserve-3d'
-                    }}
-                  >
-                    {char}
-                  </motion.span>
-                ))
-              )}
+            {/* VIENNA - Static text */}
+            <div className="block text-accent mt-6">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.6 }}
+              >
+                VIENNA
+              </motion.div>
             </div>
           </h1>
         </motion.div>
