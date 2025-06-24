@@ -60,7 +60,7 @@ export const LocationsSection: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 container-max mx-auto responsive-gap-lg">
+        <div className="grid grid-cols-1 lg:grid-cols-2 container-max mx-auto responsive-gap-lg max-w-none lg:max-w-5xl xl:max-w-6xl">
           {locations.map((location, index) => (
             <motion.div
               key={location.id}
@@ -71,32 +71,39 @@ export const LocationsSection: React.FC = () => {
               className="group h-full"
             >
               <div className="luxury-card hover-lift metallic-shine-hover h-full flex flex-col">
-                <div className="aspect-[4/3] bg-gradient-to-br from-[var(--brand-accent-primary)]/10 to-[var(--brand-accent-secondary)]/10 mb-8 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-luxury-pattern opacity-20" />
-                  <div className="text-6xl font-light text-[var(--brand-accent-primary)] tracking-wider">
-                    {location.title.charAt(0)}
-                  </div>
+                <div className="aspect-[4/3] bg-gradient-to-br from-[var(--brand-accent-primary)]/10 to-[var(--brand-accent-secondary)]/10 mb-6 lg:mb-6 flex items-center justify-center relative overflow-hidden"
+                     style={{
+                       backgroundImage: location.id === 'loft-z13' 
+                         ? `url('/images/z13/2.jpg')` 
+                         : location.id === 'palais-esterhazy' 
+                         ? `url('/images/esterhazy/1.jpg')` 
+                         : 'none',
+                       backgroundSize: 'cover',
+                       backgroundPosition: 'center',
+                       backgroundRepeat: 'no-repeat'
+                     }}>
+                  <div className="absolute inset-0 bg-black/10" />
                 </div>
                 
                 <h3 className="heading-card group-hover:text-[var(--brand-accent-primary)] luxury-transition text-center lg:text-left" 
-                    style={{ marginBottom: 'clamp(1rem, 3vw, 1.5rem)' }}>
+                    style={{ marginBottom: 'clamp(1rem, 3vw, 1.25rem)' }}>
                   {location.title}
                 </h3>
                 
                 <p className="text-luxury leading-relaxed text-center lg:text-left" 
-                   style={{ marginBottom: 'clamp(1.5rem, 4vw, 2rem)', fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
+                   style={{ marginBottom: 'clamp(1.5rem, 4vw, 1.75rem)', fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
                   {location.description}
                 </p>
 
                 <div className="flex flex-wrap justify-center lg:justify-start responsive-gap-sm" 
-                     style={{ marginBottom: 'clamp(1.5rem, 4vw, 2rem)' }}>
+                     style={{ marginBottom: 'clamp(1.5rem, 4vw, 1.75rem)' }}>
                   {location.features.map((feature) => (
                     <span
                       key={feature}
                       className="text-subtle border border-[var(--brand-text-primary)]/10 text-[var(--brand-text-muted)] text-center"
                       style={{ 
-                        padding: 'clamp(0.5rem, 1vw, 0.75rem) clamp(0.75rem, 2vw, 1rem)',
-                        fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)'
+                        padding: 'clamp(0.25rem, 0.5vw, 0.375rem) clamp(0.375rem, 1vw, 0.5rem)',
+                        fontSize: 'clamp(0.625rem, 1vw, 0.75rem)'
                       }}
                     >
                       {feature}

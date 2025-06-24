@@ -75,7 +75,7 @@ export const OfferSection: React.FC = () => {
                   } as React.CSSProperties}
                 >
                   <CardHeader className="pb-8 text-center">
-                    <CardTitle className="heading-card text-[var(--brand-accent-primary)] group-hover:text-[var(--brand-text-primary)] luxury-transition text-center">
+                    <CardTitle className="heading-card text-[var(--brand-text-primary)] group-hover:text-[var(--brand-accent-primary)] luxury-transition text-center">
                       {service.title}
                     </CardTitle>
                     <div className="w-12 h-px bg-[var(--brand-accent-primary)] group-hover:w-16 luxury-transition mx-auto" />

@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
                            style={{ width: 'clamp(1rem, 2vw, 1.125rem)', height: 'clamp(1rem, 2vw, 1.125rem)' }} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/lidija-ajvazi-823aa8145"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border border-[var(--brand-accent-primary)]/30 hover:border-[var(--brand-accent-primary)] flex items-center justify-center luxury-transition group"
