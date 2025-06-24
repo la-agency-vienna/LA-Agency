@@ -89,15 +89,9 @@ export const ContactSection: React.FC = () => {
           </motion.div>
 
           {/* Contact Form */}
-          <motion.div
-            id="contact-form"
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.0, ease: "easeOut", delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+          <div id="contact-form">
             <ContactForm />
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
