@@ -60,7 +60,7 @@ const SubSection: React.FC<{ title: string; children: React.ReactNode }> = ({ ti
 
 export const metadata = {
   title: 'Datenschutz',
-  description: 'Datenschutzerklärung der L.A. Agency Vienna',
+  description: 'Datenschutz',
 };
 
 export default function PrivacyPage() {
@@ -78,7 +78,7 @@ export default function PrivacyPage() {
     <>
       <Header />
       <LegalPageLayout 
-        title="Datenschutzerklärung"
+        title="Datenschutz"
         subtitle={`Stand: ${new Date().toLocaleDateString('de-AT')}`}
       >
         <Section title="1. Datenschutz auf einen Blick">
