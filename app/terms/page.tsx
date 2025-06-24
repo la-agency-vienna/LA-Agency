@@ -59,7 +59,7 @@ export default function TermsPage() {
     <>
       <Header />
       <LegalPageLayout 
-        title="Allgemeine Geschäftsbedingungen"
+        title="AGBs"
         subtitle={`Stand: ${new Date().toLocaleDateString('de-AT')}`}
       >
         <Section title="§ 1 Geltungsbereich und Vertragspartner">
