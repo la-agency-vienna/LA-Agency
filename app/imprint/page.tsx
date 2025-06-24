@@ -11,7 +11,7 @@ const LegalPageLayout: React.FC<{ title: string; subtitle?: string; children: Re
     <Background />
     <div className="min-h-screen bg-transparent py-20 lg:py-24 text-[var(--brand-text-primary)]">
       <div className="container-max section-padding">
-        <div className="glass-effect-light p-8 md:p-12 rounded-lg max-w-4xl mx-auto">
+        <div className="glass-effect-light p-6 sm:p-8 md:p-12 rounded-lg max-w-4xl mx-auto">
           <div className="mb-12">
             <Link href="/" passHref>
               <Button variant="ghost" className="mb-6 text-sm text-[var(--brand-text-secondary)] hover:text-[var(--brand-accent-primary)] transition-colors duration-300 px-0">
@@ -39,10 +39,10 @@ const LegalPageLayout: React.FC<{ title: string; subtitle?: string; children: Re
 
 const Section: React.FC<{ title: string; children: React.ReactNode }> = ({ title, children }) => (
   <section>
-    <h2 className="text-2xl font-normal tracking-wide text-[var(--brand-accent-primary)] mb-4 border-b border-[var(--brand-accent-primary)]/20 pb-2">
+    <h2 className="text-2xl font-normal tracking-wide text-[var(--brand-accent-primary)] mb-4 border-b border-[var(--brand-accent-primary)]/20 pb-2 text-center lg:text-left">
       {title}
     </h2>
-    <div className="space-y-2 text-[var(--brand-text-secondary)]">
+    <div className="space-y-2 text-[var(--brand-text-secondary)] text-center lg:text-left">
       {children}
     </div>
   </section>
