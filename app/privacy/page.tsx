@@ -59,7 +59,7 @@ const SubSection: React.FC<{ title: string; children: React.ReactNode }> = ({ ti
   );
 
 export const metadata = {
-  title: 'Datenschutzerklärung - L.A. Agency Vienna',
+  title: 'Datenschutz',
   description: 'Datenschutzerklärung der L.A. Agency Vienna',
 };
 

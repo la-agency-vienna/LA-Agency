@@ -32,63 +32,8 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Elegant Navigation */}
-          <div className="text-center">
-            <nav className="flex flex-wrap justify-center responsive-gap-md">
-              <button
-                onClick={() => {
-                  if (typeof document !== 'undefined') {
-                    // eslint-disable-next-line no-restricted-globals
-                    const element = document.getElementById('services');
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                className="btn-luxury-minimal"
-                style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
-              >
-                Services
-              </button>
-              <button
-                onClick={() => {
-                  if (typeof document !== 'undefined') {
-                    // eslint-disable-next-line no-restricted-globals
-                    const element = document.getElementById('locations');
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                className="btn-luxury-minimal"
-                style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
-              >
-                Locations
-              </button>
-              <button
-                onClick={() => {
-                  if (typeof document !== 'undefined') {
-                    // eslint-disable-next-line no-restricted-globals
-                    const element = document.getElementById('projects');
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                className="btn-luxury-minimal"
-                style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
-              >
-                Projekte
-              </button>
-              <button
-                onClick={() => {
-                  if (typeof document !== 'undefined') {
-                    // eslint-disable-next-line no-restricted-globals
-                    const element = document.getElementById('contact');
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                className="btn-luxury-minimal"
-                style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
-              >
-                Kontakt
-              </button>
-            </nav>
-          </div>
+          {/* Empty div for spacing */}
+          <div />
 
           {/* Refined Social Media */}
           <div className="text-center lg:text-right">
