@@ -61,13 +61,13 @@ const ImageModal: React.FC<ImageModalProps> = ({ src, alt, isOpen, onClose }) =>
 };
 
 const z13Images = [
-  '/images/z13/1.png', '/images/z13/2.png', '/images/z13/3.png', '/images/z13/4.png',
-  '/images/z13/5.png', '/images/z13/6.png', '/images/z13/7.png', '/images/z13/8.png',
-  '/images/z13/9.png', '/images/z13/10.png', '/images/z13/11.png', '/images/z13/12.png',
-  '/images/z13/13.png', '/images/z13/14.png', '/images/z13/15.png', '/images/z13/16.png',
-  '/images/z13/17.png', '/images/z13/18.png', '/images/z13/19.png', '/images/z13/20.png',
-  '/images/z13/21.png', '/images/z13/22.png', '/images/z13/23.png', '/images/z13/24.png',
-  '/images/z13/25.png', '/images/z13/26.png', '/images/z13/27.png'
+  '/images/z13/1.jpg', '/images/z13/2.jpg', '/images/z13/3.jpg', '/images/z13/4.jpg',
+  '/images/z13/5.jpg', '/images/z13/6.jpg', '/images/z13/7.jpg', '/images/z13/8.jpg',
+  '/images/z13/9.jpg', '/images/z13/10.jpg', '/images/z13/11.jpg', '/images/z13/12.jpg',
+  '/images/z13/13.jpg', '/images/z13/14.jpg', '/images/z13/15.jpg', '/images/z13/16.jpg',
+  '/images/z13/17.jpg', '/images/z13/18.jpg', '/images/z13/19.jpg', '/images/z13/20.jpg',
+  '/images/z13/21.jpg', '/images/z13/22.jpg', '/images/z13/23.jpg', '/images/z13/24.jpg',
+  '/images/z13/25.jpg', '/images/z13/26.jpg', '/images/z13/27.jpg'
 ];
 
 const Z13Content: React.FC = () => {
@@ -97,12 +97,13 @@ const Z13Content: React.FC = () => {
         <div className="text-center space-y-6">
           <div className="relative h-32 flex items-center justify-center">
             <Image
-              src="/images/z13/1.png"
+              src="/images/z13/1.jpg"
               alt="Z13 Logo"
               width={200}
               height={80}
               className="object-contain cursor-pointer"
-              onClick={() => handleImageClick("/images/z13/1.png", "Z13 Logo")}
+              onClick={() => handleImageClick("/images/z13/1.jpg", "Z13 Logo")}
+              priority
             />
           </div>
           
@@ -129,6 +130,7 @@ const Z13Content: React.FC = () => {
                   height={200}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   onClick={() => handleImageClick(image, `Z13 Loft ${index + 2}`)}
+                  loading="lazy"
                 />
               </div>
             ))}
@@ -160,11 +162,12 @@ const Z13Content: React.FC = () => {
           </div>
           <div className="relative h-64">
             <Image
-              src="/images/z13/2.png"
+              src="/images/z13/2.jpg"
               alt="Z13 Interior"
               fill
               className="object-cover rounded-lg cursor-pointer"
-              onClick={() => handleImageClick("/images/z13/2.png", "Z13 Interior")}
+              onClick={() => handleImageClick("/images/z13/2.jpg", "Z13 Interior")}
+              loading="lazy"
             />
           </div>
         </div>
@@ -197,11 +200,12 @@ const Z13Content: React.FC = () => {
           </div>
           <div className="relative h-64">
             <Image
-              src="/images/z13/15.png"
+              src="/images/z13/15.jpg"
               alt="Designer workspace"
               fill
               className="object-cover rounded-lg cursor-pointer"
-              onClick={() => handleImageClick("/images/z13/15.png", "Designer workspace")}
+              onClick={() => handleImageClick("/images/z13/15.jpg", "Designer workspace")}
+              loading="lazy"
             />
           </div>
         </div>
@@ -222,11 +226,12 @@ const Z13Content: React.FC = () => {
             </div>
             <div className="relative h-64">
               <Image
-                src="/images/z13/16.png"
+                src="/images/z13/16.jpg"
                 alt="Design details"
                 fill
                 className="object-cover rounded-lg cursor-pointer"
-                onClick={() => handleImageClick("/images/z13/16.png", "Design details")}
+                onClick={() => handleImageClick("/images/z13/16.jpg", "Design details")}
+                loading="lazy"
               />
             </div>
           </div>
@@ -247,11 +252,12 @@ const Z13Content: React.FC = () => {
           </div>
           <div className="relative h-64">
             <Image
-              src="/images/z13/4.png"
+              src="/images/z13/4.jpg"
               alt="Floor plan"
               fill
               className="object-contain cursor-pointer"
-              onClick={() => handleImageClick("/images/z13/4.png", "Floor plan")}
+              onClick={() => handleImageClick("/images/z13/4.jpg", "Floor plan")}
+              loading="lazy"
             />
           </div>
         </div>
@@ -260,11 +266,12 @@ const Z13Content: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="relative h-64">
             <Image
-              src="/images/z13/8.png"
+              src="/images/z13/8.jpg"
               alt="Main room"
               fill
               className="object-cover rounded-lg cursor-pointer"
-              onClick={() => handleImageClick("/images/z13/8.png", "Main room")}
+              onClick={() => handleImageClick("/images/z13/8.jpg", "Main room")}
+              loading="lazy"
             />
           </div>
       <div className="space-y-6">
@@ -315,11 +322,12 @@ const Z13Content: React.FC = () => {
           </div>
           <div className="relative h-64">
             <Image
-              src="/images/z13/6.png"
+              src="/images/z13/6.jpg"
               alt="Kitchen"
               fill
               className="object-cover rounded-lg cursor-pointer"
-              onClick={() => handleImageClick("/images/z13/6.png", "Kitchen")}
+              onClick={() => handleImageClick("/images/z13/6.jpg", "Kitchen")}
+              loading="lazy"
             />
           </div>
         </div>
@@ -357,11 +365,12 @@ const Z13Content: React.FC = () => {
           </div>
           <div className="relative h-48">
             <Image
-              src="/images/z13/3.png"
+              src="/images/z13/3.jpg"
               alt="Amenities"
               fill
               className="object-cover rounded-lg cursor-pointer"
-              onClick={() => handleImageClick("/images/z13/3.png", "Amenities")}
+              onClick={() => handleImageClick("/images/z13/3.jpg", "Amenities")}
+              loading="lazy"
             />
           </div>
         </div>
@@ -441,11 +450,11 @@ const Z13Content: React.FC = () => {
 };
 
 const esterhagyImages = [
-  '/images/esterhazy/1.png', '/images/esterhazy/2.png', '/images/esterhazy/3.png', '/images/esterhazy/4.png',
-  '/images/esterhazy/5.png', '/images/esterhazy/6.png', '/images/esterhazy/7.png', '/images/esterhazy/8.png',
-  '/images/esterhazy/9.png', '/images/esterhazy/10.png', '/images/esterhazy/11.png', '/images/esterhazy/12.png',
-  '/images/esterhazy/13.png', '/images/esterhazy/14.png', '/images/esterhazy/15.png', '/images/esterhazy/16.png',
-  '/images/esterhazy/17.png', '/images/esterhazy/18.png'
+  '/images/esterhazy/1.jpg', '/images/esterhazy/2.jpg', '/images/esterhazy/3.jpg', '/images/esterhazy/4.jpg',
+  '/images/esterhazy/5.jpg', '/images/esterhazy/6.jpg', '/images/esterhazy/7.jpg', '/images/esterhazy/8.jpg',
+  '/images/esterhazy/9.jpg', '/images/esterhazy/10.jpg', '/images/esterhazy/11.jpg', '/images/esterhazy/12.jpg',
+  '/images/esterhazy/13.jpg', '/images/esterhazy/14.jpg', '/images/esterhazy/15.jpg', '/images/esterhazy/16.jpg',
+  '/images/esterhazy/17.jpg', '/images/esterhazy/18.jpg'
 ];
 
 const EsterhagyContent: React.FC = () => {
@@ -475,12 +484,13 @@ const EsterhagyContent: React.FC = () => {
         <div className="text-center space-y-6">
           <div className="relative h-32 flex items-center justify-center">
             <Image
-              src="/images/esterhazy/1.png"
+              src="/images/esterhazy/1.jpg"
               alt="Palais Esterházy Logo"
               width={300}
               height={100}
               className="object-contain cursor-pointer"
-              onClick={() => handleImageClick("/images/esterhazy/1.png", "Palais Esterházy Logo")}
+              onClick={() => handleImageClick("/images/esterhazy/1.jpg", "Palais Esterházy Logo")}
+              priority
             />
           </div>
           
@@ -508,11 +518,12 @@ const EsterhagyContent: React.FC = () => {
             </div>
             <div className="relative h-64">
               <Image
-                src="/images/esterhazy/4.png"
+                src="/images/esterhazy/4.jpg"
                 alt="Palais Esterházy Interior"
                 fill
                 className="object-cover rounded-lg cursor-pointer"
-                onClick={() => handleImageClick("/images/esterhazy/4.png", "Palais Esterházy Interior")}
+                onClick={() => handleImageClick("/images/esterhazy/4.jpg", "Palais Esterházy Interior")}
+                loading="lazy"
               />
             </div>
           </div>
@@ -534,11 +545,12 @@ const EsterhagyContent: React.FC = () => {
             </div>
             <div className="relative h-64">
               <Image
-                src="/images/esterhazy/3.png"
+                src="/images/esterhazy/3.jpg"
                 alt="Floor Plan"
                 fill
                 className="object-contain rounded-lg cursor-pointer"
-                onClick={() => handleImageClick("/images/esterhazy/3.png", "Floor Plan")}
+                onClick={() => handleImageClick("/images/esterhazy/3.jpg", "Floor Plan")}
+                loading="lazy"
               />
             </div>
           </div>
@@ -572,11 +584,12 @@ const EsterhagyContent: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="relative h-64">
             <Image
-              src="/images/esterhazy/14.png"
+              src="/images/esterhazy/14.jpg"
               alt="Empire Saal"
               fill
               className="object-cover rounded-lg cursor-pointer"
-              onClick={() => handleImageClick("/images/esterhazy/14.png", "Empire Saal")}
+              onClick={() => handleImageClick("/images/esterhazy/14.jpg", "Empire Saal")}
+              loading="lazy"
             />
           </div>
           <div className="space-y-6">
@@ -654,11 +667,12 @@ const EsterhagyContent: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="relative h-64">
             <Image
-              src="/images/esterhazy/16.png"
+              src="/images/esterhazy/16.jpg"
               alt="China Laque Zimmer"
               fill
               className="object-cover rounded-lg cursor-pointer"
-              onClick={() => handleImageClick("/images/esterhazy/16.png", "China Laque Zimmer")}
+              onClick={() => handleImageClick("/images/esterhazy/16.jpg", "China Laque Zimmer")}
+              loading="lazy"
             />
           </div>
           <div className="space-y-6">
@@ -704,11 +718,12 @@ const EsterhagyContent: React.FC = () => {
           </div>
           <div className="relative h-64">
             <Image
-              src="/images/esterhazy/17.png"
+              src="/images/esterhazy/17.jpg"
               alt="Bar Salon"
               fill
               className="object-cover rounded-lg cursor-pointer"
-              onClick={() => handleImageClick("/images/esterhazy/17.png", "Bar Salon")}
+              onClick={() => handleImageClick("/images/esterhazy/17.jpg", "Bar Salon")}
+              loading="lazy"
             />
           </div>
         </div>
@@ -803,11 +818,12 @@ const EsterhagyContent: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="relative h-64">
             <Image
-              src="/images/esterhazy/11.png"
+              src="/images/esterhazy/11.jpg"
               alt="Spiele Salon"
               fill
               className="object-cover rounded-lg cursor-pointer"
-              onClick={() => handleImageClick("/images/esterhazy/11.png", "Spiele Salon")}
+              onClick={() => handleImageClick("/images/esterhazy/11.jpg", "Spiele Salon")}
+              loading="lazy"
             />
           </div>
           <div className="space-y-6">
@@ -846,11 +862,12 @@ const EsterhagyContent: React.FC = () => {
             </div>
             <div className="relative h-64">
               <Image
-                src="/images/esterhazy/7.png"
+                src="/images/esterhazy/7.jpg"
                 alt="Catering Partners"
                 fill
                 className="object-contain rounded-lg cursor-pointer"
-                onClick={() => handleImageClick("/images/esterhazy/7.png", "Catering Partners")}
+                onClick={() => handleImageClick("/images/esterhazy/7.jpg", "Catering Partners")}
+                loading="lazy"
               />
             </div>
           </div>
@@ -906,6 +923,7 @@ const EsterhagyContent: React.FC = () => {
                   height={200}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   onClick={() => handleImageClick(image, `Palais Esterházy ${index + 2}`)}
+                  loading="lazy"
                 />
               </div>
             ))}

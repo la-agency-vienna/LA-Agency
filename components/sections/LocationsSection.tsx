@@ -68,9 +68,9 @@ export const LocationsSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.0, delay: index * 0.3, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="group"
+              className="group h-full"
             >
-              <div className="luxury-card hover-lift metallic-shine-hover">
+              <div className="luxury-card hover-lift metallic-shine-hover h-full flex flex-col">
                 <div className="aspect-[4/3] bg-gradient-to-br from-[var(--brand-accent-primary)]/10 to-[var(--brand-accent-secondary)]/10 mb-8 flex items-center justify-center relative overflow-hidden">
                   <div className="absolute inset-0 bg-luxury-pattern opacity-20" />
                   <div className="text-6xl font-light text-[var(--brand-accent-primary)] tracking-wider">
@@ -93,7 +93,7 @@ export const LocationsSection: React.FC = () => {
                   {location.features.map((feature) => (
                     <span
                       key={feature}
-                      className="text-subtle border border-[var(--brand-accent-primary)]/20 text-[var(--brand-accent-primary)] text-center"
+                      className="text-subtle border border-[var(--brand-text-primary)]/10 text-[var(--brand-text-muted)] text-center"
                       style={{ 
                         padding: 'clamp(0.5rem, 1vw, 0.75rem) clamp(0.75rem, 2vw, 1rem)',
                         fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)'
@@ -104,15 +104,17 @@ export const LocationsSection: React.FC = () => {
                   ))}
                 </div>
 
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button size="lg" variant="outline" className="w-full" 
-                            style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)', padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem)' }}>
-                      {location.title} entdecken
-                    </Button>
-                  </DialogTrigger>
-                  <LocationModal location={location} />
-                </Dialog>
+                <div className="mt-auto pt-4 flex justify-center lg:justify-start">
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button size="lg" variant="outline" 
+                              style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)', padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem)' }}>
+                        {location.title} entdecken
+                      </Button>
+                    </DialogTrigger>
+                    <LocationModal location={location} />
+                  </Dialog>
+                </div>
               </div>
             </motion.div>
           ))}

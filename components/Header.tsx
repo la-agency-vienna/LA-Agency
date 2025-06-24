@@ -4,10 +4,14 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,6 +59,16 @@ export const Header: React.FC = () => {
     setIsMobileMenuOpen(false); // Close mobile menu after navigation
   };
 
+  const handleNavClick = (sectionId: string) => {
+    const isLegalPage = ['/imprint', '/privacy', '/terms'].includes(pathname);
+    if (isLegalPage) {
+      router.push(`/#${sectionId}`);
+    } else {
+      scrollToSection(sectionId);
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <>
       <header 
@@ -67,48 +81,50 @@ export const Header: React.FC = () => {
         <div className="container-max mx-auto" style={{ padding: 'clamp(1rem, 3vw, 2rem)' }}>
           <div className="flex items-center justify-between" style={{ height: 'clamp(4rem, 5vw, 5rem)' }}>
             {/* Luxury Logo */}
-            <div className="flex items-center responsive-gap-sm">
-              <div className="relative" style={{ width: 'clamp(1.5rem, 3vw, 2rem)', height: 'clamp(1.5rem, 3vw, 2rem)' }}>
-                <Image
-                  src="/images/logo/logo.png"
-                  alt="L.A. Agency Logo"
-                  fill
-                  className="object-contain"
-                />
+            <Link href="/" passHref>
+              <div className="flex items-center responsive-gap-sm cursor-pointer">
+                <div className="relative" style={{ width: 'clamp(1.5rem, 3vw, 2rem)', height: 'clamp(1.5rem, 3vw, 2rem)' }}>
+                  <Image
+                    src="/images/logo/logo.png"
+                    alt="L.A. Agency Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div>
+                  <h1 className="font-light text-[var(--brand-text-primary)] tracking-wide" 
+                      style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)' }}>L.A. AGENCY</h1>
+                  <p className="text-[var(--brand-text-muted)] tracking-widest uppercase" 
+                     style={{ fontSize: 'clamp(0.625rem, 1vw, 0.75rem)', marginTop: '-0.125rem' }}>Vienna</p>
+                </div>
               </div>
-              <div>
-                <h1 className="font-light text-[var(--brand-text-primary)] tracking-wide" 
-                    style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)' }}>L.A. AGENCY</h1>
-                <p className="text-[var(--brand-text-muted)] tracking-widest uppercase" 
-                   style={{ fontSize: 'clamp(0.625rem, 1vw, 0.75rem)', marginTop: '-0.125rem' }}>Vienna</p>
-              </div>
-            </div>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center responsive-gap-lg">
               <button
-                onClick={() => scrollToSection('services')}
+                onClick={() => handleNavClick('services')}
                 className="btn-luxury-minimal" 
                 style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
               >
                 Services
               </button>
               <button
-                onClick={() => scrollToSection('locations')}
+                onClick={() => handleNavClick('locations')}
                 className="btn-luxury-minimal"
                 style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
               >
                 Locations
               </button>
               <button
-                onClick={() => scrollToSection('projects')}
+                onClick={() => handleNavClick('projects')}
                 className="btn-luxury-minimal"
                 style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
               >
                 Projekte
               </button>
               <Button 
-                onClick={() => scrollToSection('contact-form')}
+                onClick={() => handleNavClick('contact-form')}
                 size="sm"
                 style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)', marginLeft: 'clamp(1rem, 2vw, 2rem)' }}
               >
@@ -150,7 +166,7 @@ export const Header: React.FC = () => {
                  style={{ padding: 'clamp(2rem, 4vw, 3rem)' }}>
               <div className="flex flex-col text-center responsive-spacing-md">
                 <button
-                  onClick={() => scrollToSection('services')}
+                  onClick={() => handleNavClick('services')}
                   className="text-[var(--brand-text-primary)] hover:text-[var(--brand-accent-primary)] luxury-transition tracking-wide font-light"
                   style={{ 
                     fontSize: 'clamp(1.125rem, 3vw, 1.25rem)', 
@@ -162,7 +178,7 @@ export const Header: React.FC = () => {
                   SERVICES
                 </button>
                 <button
-                  onClick={() => scrollToSection('locations')}
+                  onClick={() => handleNavClick('locations')}
                   className="text-[var(--brand-text-primary)] hover:text-[var(--brand-accent-primary)] luxury-transition tracking-wide font-light"
                   style={{ 
                     fontSize: 'clamp(1.125rem, 3vw, 1.25rem)', 
@@ -174,7 +190,7 @@ export const Header: React.FC = () => {
                   LOCATIONS
                 </button>
                 <button
-                  onClick={() => scrollToSection('projects')}
+                  onClick={() => handleNavClick('projects')}
                   className="text-[var(--brand-text-primary)] hover:text-[var(--brand-accent-primary)] luxury-transition tracking-wide font-light"
                   style={{ 
                     fontSize: 'clamp(1.125rem, 3vw, 1.25rem)', 
@@ -187,7 +203,7 @@ export const Header: React.FC = () => {
                 </button>
                 <div style={{ paddingTop: 'clamp(1.5rem, 3vw, 2rem)' }}>
                   <Button 
-                    onClick={() => scrollToSection('contact-form')}
+                    onClick={() => handleNavClick('contact-form')}
                     className="w-full"
                     size="lg"
                     style={{ 

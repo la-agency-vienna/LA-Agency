@@ -79,70 +79,10 @@ export const ContactSection: React.FC = () => {
                     <p className="text-subtle" style={{ marginBottom: 'clamp(0.25rem, 0.5vw, 0.5rem)', fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>Standort</p>
                     <div className="text-[var(--brand-text-primary)] font-light tracking-wide" 
                          style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
-                      <p style={{ margin: '0', lineHeight: '1.4' }}>Palais Esterházy</p>
-                      <p style={{ margin: '0', lineHeight: '1.4' }}>Wallnerstraße 4 / WA05</p>
-                      <p style={{ margin: '0', lineHeight: '1.4' }}>1010 Wien – Austria</p>
+                      <p style={{ margin: '0', lineHeight: '1.4' }}>Neubaugasse 55/2/4</p>
+                      <p style={{ margin: '0', lineHeight: '1.4' }}>1070 Wien - Austria</p>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Separation Line */}
-            <div className="w-full h-px bg-gradient-to-r from-transparent via-[var(--brand-accent-primary)]/30 to-transparent" 
-                 style={{ margin: 'clamp(2rem, 4vw, 3rem) 0' }} />
-
-            {/* Social Media */}
-            <div className="text-center lg:text-left" style={{ marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
-              <h4 className="heading-card" style={{ marginBottom: 'clamp(1rem, 2vw, 1.5rem)' }}>Folge uns auf Social Media</h4>
-              <div className="flex justify-center lg:justify-start responsive-gap-sm">
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="border border-[var(--brand-accent-primary)]/30 hover:border-[var(--brand-accent-primary)] flex items-center justify-center luxury-transition group"
-                  aria-label="Instagram"
-                  style={{ width: 'clamp(2.5rem, 5vw, 3rem)', height: 'clamp(2.5rem, 5vw, 3rem)' }}
-                >
-                  <Instagram className="text-[var(--brand-text-muted)] group-hover:text-[var(--brand-accent-primary)]" 
-                             style={{ width: 'clamp(1rem, 2vw, 1.25rem)', height: 'clamp(1rem, 2vw, 1.25rem)' }} />
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="border border-[var(--brand-accent-primary)]/30 hover:border-[var(--brand-accent-primary)] flex items-center justify-center luxury-transition group"
-                  aria-label="LinkedIn"
-                  style={{ width: 'clamp(2.5rem, 5vw, 3rem)', height: 'clamp(2.5rem, 5vw, 3rem)' }}
-                >
-                  <Linkedin className="text-[var(--brand-text-muted)] group-hover:text-[var(--brand-accent-primary)]" 
-                            style={{ width: 'clamp(1rem, 2vw, 1.25rem)', height: 'clamp(1rem, 2vw, 1.25rem)' }} />
-                </a>
-              </div>
-            </div>
-
-            {/* Separation Line */}
-            <div className="w-full h-px bg-gradient-to-r from-transparent via-[var(--brand-accent-primary)]/30 to-transparent" 
-                 style={{ margin: 'clamp(2rem, 4vw, 3rem) 0' }} />
-
-            {/* Business Hours */}
-            <div className="text-center lg:text-left">
-              <h4 className="heading-card" style={{ marginBottom: 'clamp(1rem, 2vw, 1.5rem)' }}>Verfügbarkeit</h4>
-              <div className="text-luxury responsive-spacing-sm">
-                <div className="flex justify-between border-b border-[var(--brand-accent-primary)]/10" 
-                     style={{ paddingBottom: 'clamp(0.5rem, 1vw, 0.75rem)' }}>
-                  <span className="text-subtle" style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>Montag - Freitag</span>
-                  <span className="font-light" style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>9:00 - 18:00</span>
-                </div>
-                <div className="flex justify-between border-b border-[var(--brand-accent-primary)]/10" 
-                     style={{ paddingBottom: 'clamp(0.5rem, 1vw, 0.75rem)' }}>
-                  <span className="text-subtle" style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>Samstag</span>
-                  <span className="font-light" style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>10:00 - 16:00</span>
-                </div>
-                <div className="flex justify-between border-b border-[var(--brand-accent-primary)]/10" 
-                     style={{ paddingBottom: 'clamp(0.5rem, 1vw, 0.75rem)' }}>
-                  <span className="text-subtle" style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>Sonntag</span>
-                  <span className="font-light" style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>Nach Vereinbarung</span>
                 </div>
               </div>
             </div>

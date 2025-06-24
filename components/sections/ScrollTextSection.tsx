@@ -38,10 +38,31 @@ export const ScrollTextSection: React.FC = () => {
   };
 
   return (
-    <section className="relative" style={{ 
-      paddingTop: 'clamp(2rem, 3vw, 3rem)', 
-      paddingBottom: 'clamp(4rem, 6vw, 5rem)'
-    }}>
+    <section 
+      className="relative overflow-hidden" 
+      style={{ 
+        paddingTop: 'clamp(2rem, 3vw, 3rem)', 
+        paddingBottom: 'clamp(4rem, 6vw, 5rem)'
+      }}
+    >
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: "url('/images/z13/12.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.25,
+          filter: 'blur(1px)',
+          transform: 'scale(1.1)'
+        }}
+      />
+      <div 
+        className="absolute inset-0 z-10"
+        style={{
+          background: 'linear-gradient(to bottom, var(--brand-bg-primary) 0%, transparent 20%, transparent 80%, var(--brand-bg-primary) 100%)'
+        }}
+      />
+      
       <div className="container-narrow relative z-20 w-full" style={{ 
         paddingLeft: 'clamp(1.5rem, 5vw, 3rem)', 
         paddingRight: 'clamp(1.5rem, 5vw, 3rem)' 
@@ -75,7 +96,7 @@ export const ScrollTextSection: React.FC = () => {
       </div>
 
       {/* CTA Button Section */}
-      <div className="w-full" style={{ 
+      <div className="relative z-20 w-full" style={{ 
         paddingTop: 'clamp(4rem, 8vw, 6rem)', 
         paddingBottom: 'clamp(2rem, 4vw, 3rem)' 
       }}>

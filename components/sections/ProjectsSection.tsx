@@ -13,7 +13,6 @@ const projects = [
     category: 'Rebranding',
     description: 'Komplettes Rebranding inkl. PR-Kampagne, Influencer-Kooperation und Launch Event in Wien.',
     image: '/images/projects/brand-relaunch.png',
-    tags: ['Rebranding', 'PR-Kampagne', 'Influencer', 'Launch Event'],
     link: 'https://google.com'
   },
   {
@@ -22,7 +21,6 @@ const projects = [
     category: 'Markteinführung',
     description: 'Markteintrittsstrategie inkl. Medienarbeit, Eventplanung & digitaler Kampagne.',
     image: '/images/projects/tech-startup.png',
-    tags: ['Markteinführung', 'Medienarbeit', 'Digital Marketing'],
     link: 'https://google.com'
   },
   {
@@ -31,7 +29,6 @@ const projects = [
     category: 'Premium Event',
     description: 'Premium-Event mit über 300 Gästen, inklusive Location-Scouting, Gästelistenmanagement und Pressebetreuung.',
     image: '/images/projects/premium-event.png',
-    tags: ['Premium Event', 'Location-Scouting', 'Pressebetreuung'],
     link: 'https://google.com'
   },
   {
@@ -40,7 +37,6 @@ const projects = [
     category: 'Digital Campaign',
     description: 'Content Creation & Influencer-Kollaboration mit über 1 Mio. organischer Reichweite.',
     image: '/images/projects/digital-campaign.png',
-    tags: ['Content Creation', 'Influencer Marketing', '1M+ Reichweite'],
     link: 'https://google.com'
   }
 ];
@@ -99,13 +95,13 @@ export const ProjectsSection: React.FC = () => {
                 
                 <div className="space-y-4">
                   <div>
-                    <span className="text-subtle text-[var(--brand-accent-primary)] border border-[var(--brand-accent-primary)]/20" 
+                    <span className="text-subtle text-[var(--brand-text-secondary)] border border-[var(--brand-text-primary)]/10" 
                           style={{ padding: 'clamp(0.25rem, 0.5vw, 0.5rem) clamp(0.5rem, 1vw, 0.75rem)', fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}>
                       {project.category}
                     </span>
                   </div>
                   
-                  <h3 className="heading-card group-hover:text-[var(--brand-accent-primary)] luxury-transition">
+                  <h3 className="heading-card text-[var(--brand-text-primary)] group-hover:text-[var(--brand-accent-primary)] luxury-transition">
                     {project.title}
                   </h3>
                   
@@ -114,22 +110,7 @@ export const ProjectsSection: React.FC = () => {
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap responsive-gap-sm">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-subtle border border-[var(--brand-accent-primary)]/10 text-[var(--brand-text-muted)]"
-                        style={{ 
-                          padding: 'clamp(0.25rem, 0.5vw, 0.5rem) clamp(0.5rem, 1vw, 0.75rem)',
-                          fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)'
-                        }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="pt-2">
+                  <div className="pt-4">
                     <Button
                       onClick={() => {
                         if (typeof window !== 'undefined') {
@@ -139,7 +120,7 @@ export const ProjectsSection: React.FC = () => {
                       }}
                       variant="outline"
                       size="sm"
-                      className="text-xs"
+                      className="text-xs border-[var(--brand-text-muted)] text-[var(--brand-text-muted)] hover:bg-[var(--brand-accent-primary)] hover:border-[var(--brand-accent-primary)] hover:text-white"
                     >
                       Projekt ansehen
                     </Button>
