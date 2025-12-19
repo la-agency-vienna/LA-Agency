@@ -7,8 +7,21 @@ import { useMouse } from './MouseContext';
 export const CustomCursor: React.FC = () => {
   const { mousePosition, isPressed, isOverText } = useMouse();
   const [isVisible, setIsVisible] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  // Detect touch device on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hasTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      const hasCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+      setIsTouchDevice(hasTouchScreen || hasCoarsePointer);
+    }
+  }, []);
 
   useEffect(() => {
+    // Skip mouse event listeners on touch devices
+    if (isTouchDevice) return;
+
     const handleMouseMove = () => {
       setIsVisible(true);
     };
@@ -33,9 +46,10 @@ export const CustomCursor: React.FC = () => {
         document.removeEventListener('mouseenter', handleMouseEnter);
       };
     }
-  }, []);
+  }, [isTouchDevice]);
 
-  if (!isVisible) return null;
+  // Don't render on touch devices or when not visible
+  if (isTouchDevice || !isVisible) return null;
 
   return (
     <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-[9999]">
@@ -62,7 +76,7 @@ export const CustomCursor: React.FC = () => {
             transform: 'translate(-50%, -50%)',
           }}
         />
-        
+
         {/* Vertical line */}
         <motion.div
           className="absolute bg-[var(--brand-accent-primary)]"

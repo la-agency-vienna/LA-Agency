@@ -71,12 +71,11 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      <header 
-        className={`fixed top-0 left-0 right-0 z-50 luxury-transition border-b ${
-          isScrolled 
-            ? 'bg-[var(--brand-white)]/95 backdrop-blur-md border-[var(--brand-accent-primary)]/20 shadow-lg' 
-            : 'bg-[var(--brand-white)]/90 backdrop-blur-sm border-[var(--brand-accent-primary)]/10'
-        }`}
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 luxury-transition border-b ${isScrolled
+          ? 'bg-white border-[var(--brand-accent-primary)]/20 shadow-lg'
+          : 'bg-white border-[var(--brand-accent-primary)]/10'
+          }`}
       >
         <div className="container-max mx-auto" style={{ padding: 'clamp(1rem, 3vw, 2rem)' }}>
           <div className="flex items-center justify-between" style={{ height: 'clamp(4rem, 5vw, 5rem)' }}>
@@ -92,10 +91,10 @@ export const Header: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <h1 className="font-light text-[var(--brand-text-primary)] tracking-wide" 
-                      style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)' }}>L.A. AGENCY</h1>
-                  <p className="text-[var(--brand-text-muted)] tracking-widest uppercase" 
-                     style={{ fontSize: 'clamp(0.625rem, 1vw, 0.75rem)', marginTop: '-0.125rem' }}>Vienna</p>
+                  <h1 className="font-light text-[var(--brand-text-primary)] tracking-wide"
+                    style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)' }}>L.A. AGENCY</h1>
+                  <p className="text-[var(--brand-text-muted)] tracking-widest uppercase"
+                    style={{ fontSize: 'clamp(0.625rem, 1vw, 0.75rem)', marginTop: '-0.125rem' }}>Vienna</p>
                 </div>
               </div>
             </Link>
@@ -104,17 +103,10 @@ export const Header: React.FC = () => {
             <nav className="hidden lg:flex items-center responsive-gap-lg">
               <button
                 onClick={() => handleNavClick('services')}
-                className="btn-luxury-minimal" 
-                style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
-              >
-                Services
-              </button>
-              <button
-                onClick={() => handleNavClick('locations')}
                 className="btn-luxury-minimal"
                 style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
               >
-                Locations
+                Services
               </button>
               <button
                 onClick={() => handleNavClick('projects')}
@@ -123,7 +115,7 @@ export const Header: React.FC = () => {
               >
                 Projekte
               </button>
-              <Button 
+              <Button
                 onClick={() => handleNavClick('contact-form')}
                 size="sm"
                 style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)', marginLeft: 'clamp(1rem, 2vw, 2rem)' }}
@@ -133,7 +125,7 @@ export const Header: React.FC = () => {
             </nav>
 
             {/* Mobile Menu Button */}
-            <button 
+            <button
               className="lg:hidden text-[var(--brand-text-primary)] hover:text-[var(--brand-accent-primary)] luxury-transition-fast"
               style={{ padding: 'clamp(0.5rem, 1vw, 0.75rem)' }}
               onClick={(e) => {
@@ -156,20 +148,20 @@ export const Header: React.FC = () => {
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-40 lg:hidden">
           <div className="fixed inset-0 bg-[var(--brand-white)]/80 backdrop-blur-md" />
-          <div className="fixed left-0 right-0 bg-[var(--brand-white)] border-b border-[var(--brand-accent-primary)]/20 shadow-lg" 
-               style={{ 
-                 top: 'clamp(4rem, 5vw, 5rem)',
-                 minHeight: '60vh',
-                 zIndex: 41
-               }}>
-            <nav className="container-max mx-auto" 
-                 style={{ padding: 'clamp(2rem, 4vw, 3rem)' }}>
+          <div className="fixed left-0 right-0 bg-[var(--brand-white)] border-b border-[var(--brand-accent-primary)]/20 shadow-lg"
+            style={{
+              top: 'clamp(4rem, 5vw, 5rem)',
+              minHeight: '60vh',
+              zIndex: 41
+            }}>
+            <nav className="container-max mx-auto"
+              style={{ padding: 'clamp(2rem, 4vw, 3rem)' }}>
               <div className="flex flex-col text-center responsive-spacing-md">
                 <button
                   onClick={() => handleNavClick('services')}
                   className="text-[var(--brand-text-primary)] hover:text-[var(--brand-accent-primary)] luxury-transition tracking-wide font-light"
-                  style={{ 
-                    fontSize: 'clamp(1.125rem, 3vw, 1.25rem)', 
+                  style={{
+                    fontSize: 'clamp(1.125rem, 3vw, 1.25rem)',
                     padding: 'clamp(0.75rem, 2vw, 1rem)',
                     display: 'block',
                     width: '100%'
@@ -178,22 +170,10 @@ export const Header: React.FC = () => {
                   SERVICES
                 </button>
                 <button
-                  onClick={() => handleNavClick('locations')}
-                  className="text-[var(--brand-text-primary)] hover:text-[var(--brand-accent-primary)] luxury-transition tracking-wide font-light"
-                  style={{ 
-                    fontSize: 'clamp(1.125rem, 3vw, 1.25rem)', 
-                    padding: 'clamp(0.75rem, 2vw, 1rem)',
-                    display: 'block',
-                    width: '100%'
-                  }}
-                >
-                  LOCATIONS
-                </button>
-                <button
                   onClick={() => handleNavClick('projects')}
                   className="text-[var(--brand-text-primary)] hover:text-[var(--brand-accent-primary)] luxury-transition tracking-wide font-light"
-                  style={{ 
-                    fontSize: 'clamp(1.125rem, 3vw, 1.25rem)', 
+                  style={{
+                    fontSize: 'clamp(1.125rem, 3vw, 1.25rem)',
                     padding: 'clamp(0.75rem, 2vw, 1rem)',
                     display: 'block',
                     width: '100%'
@@ -202,12 +182,12 @@ export const Header: React.FC = () => {
                   PROJEKTE
                 </button>
                 <div style={{ paddingTop: 'clamp(1.5rem, 3vw, 2rem)' }}>
-                  <Button 
+                  <Button
                     onClick={() => handleNavClick('contact-form')}
                     className="w-full"
                     size="lg"
-                    style={{ 
-                      fontSize: 'clamp(1rem, 2.5vw, 1.125rem)', 
+                    style={{
+                      fontSize: 'clamp(1rem, 2.5vw, 1.125rem)',
                       padding: 'clamp(1rem, 3vw, 1.25rem) clamp(1.5rem, 4vw, 2rem)',
                       minHeight: 'clamp(3rem, 8vw, 3.5rem)'
                     }}

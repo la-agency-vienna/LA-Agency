@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
               <!-- Header -->
               <div style="background: linear-gradient(135deg, #B8860B 0%, #DAA520 100%); padding: 32px; text-align: center;">
                 <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 600;">Neue Kontaktanfrage</h1>
-                <p style="margin: 8px 0 0 0; color: #ffffff; opacity: 0.9; font-size: 14px;">L.A. Agency Wien</p>
+                <p style="margin: 8px 0 0 0; color: #ffffff; opacity: 1; font-size: 14px;">L.A. Agency Wien</p>
               </div>
               
               <!-- Content -->

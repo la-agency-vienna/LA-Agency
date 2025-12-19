@@ -11,7 +11,7 @@ interface VideoBackgroundProps {
 
 export const VideoBackground: React.FC<VideoBackgroundProps> = ({
   videoSrc,
-  opacity = 0.25,
+  opacity = 1,
   blur = 1,
   className = '',
 }) => {
@@ -67,7 +67,7 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({
       // Ensure video is ready to play
       videoRef.current.currentTime = 0;
       const playPromise = videoRef.current.play();
-      
+
       if (playPromise !== undefined) {
         playPromise.catch((error) => {
           console.log('Video autoplay was prevented:', error);
@@ -77,7 +77,7 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({
   }, [isLoaded, isInView]);
 
   return (
-    <div 
+    <div
       ref={observerRef}
       className={`absolute inset-0 overflow-hidden ${className}`}
     >
@@ -101,34 +101,16 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({
         >
           <source src={videoSrc} type="video/mp4" />
           {/* Fallback for browsers that don't support video */}
-          <div 
+          <div
             className="absolute inset-0 bg-gradient-to-br from-[var(--brand-accent-primary)]/10 to-[var(--brand-accent-secondary)]/10"
             style={{ opacity: opacity }}
           />
         </video>
       )}
-      
-      {/* Gradient Overlay for Faded Borders - Similar to ScrollTextSection */}
-      <div 
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'linear-gradient(to bottom, var(--brand-bg-primary) 0%, transparent 20%, transparent 80%, var(--brand-bg-primary) 100%)',
-          zIndex: 10,
-        }}
-      />
-      
-      {/* Additional side fade effect for more luxury look */}
-      <div 
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'linear-gradient(to right, var(--brand-bg-primary) 0%, transparent 15%, transparent 85%, var(--brand-bg-primary) 100%)',
-          zIndex: 10,
-        }}
-      />
-      
+
       {/* Loading placeholder - Shows while video is loading */}
       {!isLoaded && shouldLoad && (
-        <div 
+        <div
           className="absolute inset-0 bg-gradient-to-br from-[var(--brand-accent-primary)]/5 to-[var(--brand-accent-secondary)]/5 animate-pulse"
           style={{ zIndex: 5 }}
         />
