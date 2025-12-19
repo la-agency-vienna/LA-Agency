@@ -16,7 +16,7 @@ export const HeroSection: React.FC = () => {
       display: 'flex',
       alignItems: 'flex-end',
       justifyContent: 'center',
-      paddingBottom: 'clamp(6rem, 15vh, 12rem)'
+      paddingBottom: 'clamp(10rem, 20vh, 16rem)'
     }}>
       {/* Solid background to block grid pattern */}
       <div className="absolute inset-0 bg-[var(--brand-bg-primary)] z-[15]" />
