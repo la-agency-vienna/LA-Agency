@@ -48,31 +48,50 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({
     };
   }, []);
 
-  // Handle video load
+  // Handle video load and Safari-specific autoplay fix
   useEffect(() => {
     if (shouldLoad && videoRef.current) {
-      videoRef.current.addEventListener('loadeddata', () => {
-        setIsLoaded(true);
-      });
+      const video = videoRef.current;
 
-      // Preload video metadata only
-      videoRef.current.preload = 'metadata';
-      videoRef.current.load();
+      // Safari fix: explicitly set muted property via JavaScript
+      video.muted = true;
+      video.defaultMuted = true;
+
+      const handleLoadedData = () => {
+        setIsLoaded(true);
+        // Safari: try to play immediately when data is loaded
+        video.play().catch(() => { });
+      };
+
+      const handleLoadedMetadata = () => {
+        // Safari: another attempt to play
+        video.muted = true;
+        video.play().catch(() => { });
+      };
+
+      video.addEventListener('loadeddata', handleLoadedData);
+      video.addEventListener('loadedmetadata', handleLoadedMetadata);
+      video.addEventListener('canplay', () => video.play().catch(() => { }));
+
+      // Preload video
+      video.preload = 'auto';
+      video.load();
+
+      return () => {
+        video.removeEventListener('loadeddata', handleLoadedData);
+        video.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      };
     }
   }, [shouldLoad]);
 
   // Handle video play when loaded and in view
   useEffect(() => {
     if (isLoaded && isInView && videoRef.current) {
-      // Ensure video is ready to play
-      videoRef.current.currentTime = 0;
-      const playPromise = videoRef.current.play();
-
-      if (playPromise !== undefined) {
-        playPromise.catch((error) => {
-          console.log('Video autoplay was prevented:', error);
-        });
-      }
+      const video = videoRef.current;
+      // Safari: ensure muted before play
+      video.muted = true;
+      video.currentTime = 0;
+      video.play().catch(() => { });
     }
   }, [isLoaded, isInView]);
 
