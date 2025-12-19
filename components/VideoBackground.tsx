@@ -96,8 +96,15 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({
           muted
           loop
           playsInline
+          // @ts-ignore - webkit-playsinline for older Safari
+          webkit-playsinline="true"
           disablePictureInPicture
-          preload="none" // Don't preload until needed
+          preload="auto"
+          onCanPlayThrough={() => {
+            if (videoRef.current) {
+              videoRef.current.play().catch(() => { });
+            }
+          }}
         >
           <source src={videoSrc} type="video/mp4" />
           {/* Fallback for browsers that don't support video */}
