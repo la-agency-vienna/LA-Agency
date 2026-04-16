@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Background } from '../components/Background';
-import { CustomCursor } from '../components/CustomCursor';
-import { MouseProvider } from '../components/MouseContext';
 import { ComingSoon } from '../components/ComingSoon';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -53,18 +51,15 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.svg" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
       </head>
-      <body className={`${inter.className} bg-[#f7f5f3] text-[#2d2d2d] antialiased cursor-none`}>
+      <body className={`${inter.className} bg-[#f7f5f3] text-[#2d2d2d] antialiased`}>
         {/* Animated Global Background */}
         <Background />
-        
+
         {/* Global Grid Pattern */}
         <div className="fixed inset-0 bg-luxury-pattern opacity-20 pointer-events-none z-10" />
-        
-        <MouseProvider>
-          <CustomCursor />
-          <ComingSoon />
-          {children}
-        </MouseProvider>
+
+        <ComingSoon />
+        {children}
         <Analytics />
       </body>
     </html>
