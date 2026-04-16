@@ -38,11 +38,8 @@ export function ComingSoon() {
         }`}
       >
         {/* Brand Name */}
-        <h1 className="text-[3.5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-black tracking-tight text-white uppercase leading-[0.85]">
-          L.A.
-        </h1>
-        <h1 className="text-[2.5rem] sm:text-[4rem] md:text-[5.5rem] lg:text-[7rem] font-black tracking-tight text-white uppercase leading-[0.85] -mt-1 sm:-mt-2">
-          Agency
+        <h1 className="text-[3rem] sm:text-[5rem] md:text-[7rem] lg:text-[9rem] font-black tracking-tight text-white uppercase leading-[0.85]">
+          L.A. Agency
         </h1>
         <p className="mt-3 sm:mt-4 text-xs sm:text-sm font-bold tracking-[0.4em] text-white/50 uppercase">
           Vienna
@@ -60,7 +57,7 @@ export function ComingSoon() {
         {/* Contact Info */}
         <div className="space-y-3 sm:space-y-4">
           <p className="text-base sm:text-lg font-bold tracking-[0.08em] text-white">
-            Lidija Lajvazi
+            Lidija Ajvazi
           </p>
 
           <a
