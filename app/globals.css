@@ -48,22 +48,6 @@
     padding-right: env(safe-area-inset-right);
   }
   
-  /* Hide system cursor only on desktop - not on mobile/touch devices */
-  @media (hover: hover) and (pointer: fine) {
-    body {
-      cursor: none !important;
-    }
-    
-    *, *::before, *::after {
-      cursor: none !important;
-    }
-    
-    /* Ensure interactive elements don't show cursor */
-    button, a, input, textarea, select, [role="button"], [onClick] {
-      cursor: none !important;
-    }
-  }
-  
   * {
     box-sizing: border-box;
   }
