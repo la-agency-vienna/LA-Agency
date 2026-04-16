@@ -2,11 +2,9 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { useMouse } from '../MouseContext';
 import { VideoBackground } from '../VideoBackground';
 
 export const HeroSection: React.FC = () => {
-  const { mousePosition } = useMouse();
   const titleRef = useRef(null);
 
   return (
