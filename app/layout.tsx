@@ -4,6 +4,7 @@ import './globals.css';
 import { Background } from '../components/Background';
 import { CustomCursor } from '../components/CustomCursor';
 import { MouseProvider } from '../components/MouseContext';
+import { ComingSoon } from '../components/ComingSoon';
 import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -61,6 +62,7 @@ export default function RootLayout({
         
         <MouseProvider>
           <CustomCursor />
+          <ComingSoon />
           {children}
         </MouseProvider>
         <Analytics />
