@@ -1,6 +1,6 @@
 # L.A. Agency Vienna
 
-Exklusives Marketing, PR und Eventmanagement in Wien.
+Exklusives Marketing, PR und Eventmanagement in Wien. 
 
 ## 🎯 Über das Projekt
 
